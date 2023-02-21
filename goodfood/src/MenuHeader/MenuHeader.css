@@ -1,0 +1,59 @@
+.sidebar{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    align-items: center;
+}
+.menu-burger{
+    width :300px;
+    position: absolute;
+    margin-top: 230px;
+    border: 1px solid rgb(170, 169, 169);
+    
+}
+.sidebar-left{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-left > *{
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+
+.Good{
+    color:#458651;
+}
+
+.Food{
+    color:#7cb305;
+}
+
+
+.sidebar-right{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.sidebar-right > *{
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+.sidebar-right-input{
+    width  : 600px;
+}
+
+.menu-login {
+    position: absolute;
+    margin-top: 100px;
+    border: 1px solid black;
+    
+}
+
+.ant-menu {
+    border:1px, solid, black;
+}
+
+
