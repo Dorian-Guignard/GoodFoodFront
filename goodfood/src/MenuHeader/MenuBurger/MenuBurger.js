@@ -1,10 +1,21 @@
 
-import {Menu} from 'antd'
+import { Menu} from 'antd'
+import { useState } from 'react';
 
 
 function MenuBurger (){
+  const [openKeys, setOpenKeys] = useState([]);
+
+  const onOpenChange = (keys) => {
+    setOpenKeys(keys);
+  };
+
     return(     
-<Menu style={{ border:'none'}}items={[
+<Menu style={{border:'none'}}
+      openKeys={openKeys}
+      onOpenChange={onOpenChange}
+      mode="inline"
+      items={[
             {label:"Catégorie", key:"Catégorie", 
             children: [
               { label:"Ptit Déj", key: "Ptit Déj"},
@@ -26,9 +37,11 @@ function MenuBurger (){
               { label:"Rajeunissant", key: "Rajeunissant"}
             ],
           },
-            {label:"Ajouter une recette"}
+            {label:"Ajouter une recette"},
+          
             ]}>
-</Menu>
+            
+  </Menu>
     )
 }
 

@@ -1,0 +1,12 @@
+.right-components{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 481px) {
+
+    .right-components {
+      display: none;
+    }
+}
