@@ -29,14 +29,20 @@ function MenuCarousel() {
         <h1 className='carousel-card'>Slide 4</h1>
       </div>
     </Carousel>
-    <div>
-        <Button onClick={()=>{
+    <div className='carousel-btn'>
+        <Button 
+        onClick={()=>{
             ref.current.prev()
-        }}>Précédent</Button>
+        }}>
+          Précédent
+          </Button>
     
-        <Button onClick={()=>{
+        <Button 
+        onClick={()=>{
             ref.current.next()
-        }}>Suivant</Button>
+        }}>
+          Suivant
+          </Button>
     </div>
     </div>
 )};
