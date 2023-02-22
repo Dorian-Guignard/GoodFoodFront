@@ -10,12 +10,9 @@ const{Title} = Typography;
 function MenuHeader() {
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false);
   const isSmallScreen = useMediaQuery({ maxWidth: 450 });
 
-  const togglelogin = () => {
-    setLoginOpen(!loginOpen);
-  };
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -27,10 +24,7 @@ function MenuHeader() {
     isSmallScreen={isSmallScreen} 
     />
      <MiddleComponents />
-     <RightComponents 
-     togglelogin={togglelogin} 
-     loginOpen={loginOpen} 
-     />
+     <RightComponents />
     <Title level={isSmallScreen ? 5 : 1} className='title-responisve'>
         <span className='Good'>Good</span> 
         <span className='Food'>Food</span>

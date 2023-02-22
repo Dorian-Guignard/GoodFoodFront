@@ -41,4 +41,4 @@ function MenuCarousel() {
     </div>
 )};
 
-export default MenuCarousel
+export default MenuCarousel;

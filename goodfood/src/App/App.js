@@ -1,10 +1,11 @@
 
 import { ConfigProvider } from "antd";
 import MenuHeader from "../MenuHeader/MenuHeader";
-import HomeCarousel from "../HomeCarousel/HomeCarousel";
 import Footer from "../Footer/Footer";
-import HomeVertue from "../HomeVertue/HomeVertue";
 import './App.css'; 
+import { Routes ,Route } from "react-router-dom";
+import HomePage from "../HomePage/HomePage";
+
 
 
 function App() { 
@@ -19,8 +20,9 @@ function App() {
         >
     <MenuHeader/>
     <div className="content">
-    <HomeCarousel/>
-    <HomeVertue/>
+      <Routes>
+        <Route path="/" element={<HomePage/>}></Route>
+      </Routes>
     </div>
     <Footer/>
 
