@@ -4,10 +4,15 @@
     padding-bottom: 10px;
     height: 5%;
     width: 100%;
+    justify-content: center;
+    display: flex;
     background-color: white;
     border : 1px solid black
+    
 }
 
 .footer-element {
     margin-right: 50px;
+
+    
 }
