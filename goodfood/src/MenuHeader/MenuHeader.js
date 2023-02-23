@@ -5,12 +5,15 @@ import LeftComponents from "./LeftComponents/LeftComponents"
 import MiddleComponents from "./MiddleComponents/MiddleComponents";
 import RightComponents from "./RightComponents/RightComponents";
 import './MenuHeader.css'
+import { useLocation, useNavigate } from "react-router-dom";
 const{Title} = Typography;
 
 function MenuHeader() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const isSmallScreen = useMediaQuery({ maxWidth: 450 });
+  const navigate = useNavigate();
+  const location = useLocation();
 
 
   const toggleMenu = () => {
@@ -21,10 +24,12 @@ function MenuHeader() {
     <LeftComponents 
     toggleMenu={toggleMenu} 
     menuOpen={menuOpen} 
-    isSmallScreen={isSmallScreen} 
+    isSmallScreen={isSmallScreen}
+    navigate={navigate}
+    location={location} 
     />
      <MiddleComponents />
-     <RightComponents />
+     <RightComponents  />
     <Title level={isSmallScreen ? 5 : 1} className='title-responisve'>
         <span className='Good'>Good</span> 
         <span className='Food'>Food</span>

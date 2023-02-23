@@ -1,7 +1,9 @@
+import LoginForm from "../Login/Login";
+
 function Connection(){
     return(
-    <div>Connexion </div>
+    <div><LoginForm/></div>
     )
 }
 
-export default Connection
+export default Connection;

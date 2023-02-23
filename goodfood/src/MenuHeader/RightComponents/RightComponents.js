@@ -1,9 +1,10 @@
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, HomeOutlined} from "@ant-design/icons";
 import { Button, Col, Switch } from "antd";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './RightComponents.css'
 
-function RightComponents() {
+
+function RightComponents( ) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -18,11 +19,9 @@ function RightComponents() {
         <Button
           type="primary"
           onClick={() => navigate('/')}
-        >
-          Retour à l'accueil
+        > <HomeOutlined/> Retour à l'accueil
         </Button>
-      )}
-        
+      )}  
       </Col>
     );
   }

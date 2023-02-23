@@ -1,14 +1,24 @@
 .carousel {
-    
+    position: relative;
     width: 400px;
-    height: 350px;
-    background-color: #D48806;    
+    background-color: #D48806;
+    border-radius:1rem
+  }
+  
+  .carousel-card {
+    color: white;  
+   
+  }
+.carousel-btn{
+    position: absolute;
+    top: 42%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    
 }
 
-.carousel-card {
-    
-    color: white;
-    line-Height: 300px;
-      
-};
-
+@media (max-width:450px){
+    .carousel {width: 200px;}
+}

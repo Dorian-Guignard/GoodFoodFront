@@ -16,13 +16,15 @@ import AddRecipe from "../AddRecipe/AddRecipe";
 function App() { 
   
   return (
+    <div className="App">
     <ConfigProvider
           theme={{
             token: {
-              colorPrimary: '#d48806',
+              colorPrimary: '#faad14',
             },
           }}
         >
+          
     <MenuHeader/>
     <div className="content">
       <Routes>
@@ -32,12 +34,13 @@ function App() {
         <Route path="/recipe/add" element={<AddRecipe/>}></Route>
         <Route path="/mentionslegales" element={<LegalNotice/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/connexion" element={<Connection/>}></Route>
+        <Route path="/login" element={<Connection/>}></Route>
       </Routes>
     </div>
     <Footer/>
 
     </ConfigProvider>
+    </div>
   );
 }
 
