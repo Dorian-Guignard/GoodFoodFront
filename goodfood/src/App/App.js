@@ -9,8 +9,8 @@ import Recipe from "../Recipe/Recipe"
 import CategoryList from "../CategoryList/CategoryList";
 import LegalNotice from "../LegalNotice/LegalNotice";
 import Contact from "../Contact/Contact";
-import Connection from "../Connection/Connection";
 import AddRecipe from "../AddRecipe/AddRecipe";
+import LoginPage from "../LoginPage/LoginPage";
 
 
 function App() { 
@@ -34,11 +34,10 @@ function App() {
         <Route path="/recipe/add" element={<AddRecipe/>}></Route>
         <Route path="/mentionslegales" element={<LegalNotice/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/login" element={<Connection/>}></Route>
+        <Route path="/login" element={<LoginPage/>}></Route>
       </Routes>
     </div>
     <Footer/>
-
     </ConfigProvider>
     </div>
   );
