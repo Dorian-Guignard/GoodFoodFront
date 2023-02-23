@@ -11,6 +11,7 @@ import LegalNotice from "../LegalNotice/LegalNotice";
 import Contact from "../Contact/Contact";
 import AddRecipe from "../AddRecipe/AddRecipe";
 import LoginPage from "../LoginPage/LoginPage";
+import Virtue from "../Virtue/Virtue"
 
 
 function App() { 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/recipe" element={<Recipe/>}></Route>
         <Route path="/categorie" element={<CategoryList/>}></Route>
+        <Route path="/vertue/*" element={<Virtue/>}></Route>
         <Route path="/recipe/add" element={<AddRecipe/>}></Route>
         <Route path="/mentionslegales" element={<LegalNotice/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>

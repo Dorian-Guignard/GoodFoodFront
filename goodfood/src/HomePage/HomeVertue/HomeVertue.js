@@ -1,6 +1,7 @@
 import './HomeVertue.css';
 import { Col, Row, Image } from 'antd';
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useMediaQuery } from 'react-responsive';
 
@@ -8,6 +9,8 @@ import { useMediaQuery } from 'react-responsive';
 function HomeVertue() {
     const [virtues, setVirtues] = useState([]);
     const smallScreen=useMediaQuery({ maxWidth: 450 })
+    const navigate = useNavigate();
+    
     
     
     useEffect(() => {
@@ -28,8 +31,15 @@ function HomeVertue() {
         {virtues.map(virtue => (
           <Col lg={6} key={virtue.id}>
             <div className='vertue'>       
-            <Image src={virtue.picture} alt='image des vertues' width={smallScreen ? 50 : 200} height={smallScreen ? 50 : 200}/>
-            <h3 className='vertue-title'>{virtue.name}</h3>
+            <Image src={virtue.picture} alt='image des vertues' 
+            width={smallScreen ? 50 : 200} 
+            height={smallScreen ? 50 : 200}
+            onClick={() => navigate(`/vertue/${virtue.name}`)}
+            />
+            <h3 className='vertue-title'
+              onClick={() => navigate(`/vertue/${virtue.name}`)}>
+              {virtue.name}
+            </h3>
             </div>
           </Col>
         ))}

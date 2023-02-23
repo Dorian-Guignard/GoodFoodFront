@@ -1,6 +1,6 @@
 function AddRecipe(){
     return(
-    <div>Connexion </div>
+    <div>Ajouter une recette </div>
     )
 }
 
