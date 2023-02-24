@@ -2,6 +2,7 @@ import { Col, Row } from 'antd';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {useLocation} from "react-router-dom";
+import RecipeCard from '../RecipeCard/RecipeCard';
 
 
 
@@ -35,27 +36,20 @@ function Virtue(){
     fetchResults();
     }, []);
     
-    /*const mappedRecipes = recipes.map((recipe) => ({
-    name: recipe.name
-    }));*/
+    const mappedRecipes = recipes.map((recipe) => ({
+    id: recipe.id,
+    name: recipe.name,
+    category: recipe.category.name,
+    virtue: recipe.virtue.name,
+    }));
 
-    console.log(recipes)
+    console.log(recipes);
+    console.log(mappedRecipes);
       return (
         <div>
-            <h2>{virtueToShow}</h2>
-            <Row gutter={24}>
-            {recipes.map((recipe) => (
-            <Col lg={6} key={recipe.id}>
-                <div className='recipe'>       
-                <h3 className='recipe-title'>
-                {recipe.name}
-                </h3>
-                </div>
-            </Col>
-            ))}
-            </Row>
-        </div>
-        
+            <h2>{virtueToShow}</h2>     
+                <RecipeCard recipe={mappedRecipes}/>
+        </div>       
         );
         
         

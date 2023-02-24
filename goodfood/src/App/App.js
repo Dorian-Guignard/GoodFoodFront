@@ -30,7 +30,7 @@ function App() {
     <div className="content">
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
-        <Route path="/recipe" element={<Recipe/>}></Route>
+        <Route path="/recipe/*" element={<Recipe/>}></Route>
         <Route path="/categorie" element={<CategoryList/>}></Route>
         <Route path="/vertue/*" element={<Virtue/>}></Route>
         <Route path="/recipe/add" element={<AddRecipe/>}></Route>

@@ -3,6 +3,7 @@ import { Carousel } from 'antd'
 import { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+import RecipeCard from '../../RecipeCard/RecipeCard';
 
 import './HomeCarousel.css';
 
@@ -24,7 +25,7 @@ function MenuCarousel() {
           <h1 className='carousel-card'style={smallScreen ? { height: "100px" } : { height: "200px" }} >Slide 1</h1>
         </div>
         <div>
-          <h1 className='carousel-card'>Slide 2</h1>
+          <h1 className='carousel-card'>Slide2</h1>
         </div>
         <div>
           <h1 className='carousel-card'>Slide 3</h1>
