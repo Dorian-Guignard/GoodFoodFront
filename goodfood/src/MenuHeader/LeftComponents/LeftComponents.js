@@ -1,4 +1,4 @@
-import { CloseOutlined, MenuOutlined, UserOutlined, HomeOutlined } from "@ant-design/icons";
+import { CloseOutlined, MenuOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Col, Drawer, Switch, Image, Typography } from "antd"
 import MenuBurger from "../MenuBurger/MenuBurger";
 import Logo from '../../Logo.png'
@@ -27,21 +27,13 @@ function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate, locatio
         >
           <MenuBurger />
           <div className="login-switch">
-            <Button 
-            onClick={() => navigate('/login')}
-            type="primary">
-              <UserOutlined/>Connexion
-            </Button>
-            {location.pathname !== '/' && (
-              <Button
-                type="primary"
-                onClick={() => navigate('/')}
-              >
-                <HomeOutlined/>Retour à l'accueil
+              <Button 
+              onClick={() => {toggleMenu(); navigate('/login')}}
+              type="primary">
+                <UserOutlined/>Connexion
               </Button>
-            )}
-            <Switch />
-</div>
+              <Switch />
+          </div>
         </Drawer>
         <Image style={isSmallScreen ? { width: "30px" } : { width: "60px" }} src={Logo} />
         <Title level={isSmallScreen ? 5 : 1} className="title">

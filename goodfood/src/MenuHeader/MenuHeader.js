@@ -1,6 +1,7 @@
 import React, {useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import {Typography, Row } from 'antd'
+import {Typography, Row, Button } from 'antd'
+import { HomeOutlined } from "@ant-design/icons";
 import LeftComponents from "./LeftComponents/LeftComponents"
 import MiddleComponents from "./MiddleComponents/MiddleComponents";
 import RightComponents from "./RightComponents/RightComponents";
@@ -34,6 +35,17 @@ function MenuHeader() {
         <span className='Good'>Good</span> 
         <span className='Food'>Food</span>
     </Title>
+    <div className="btn-responsive">
+      {location.pathname !== '/' && (
+        <Button
+        size="small"
+        type="primary"
+        onClick={() => navigate('/')}
+        >
+        <HomeOutlined/>
+        </Button>
+      )}
+    </div>
   </Row>
  
   );

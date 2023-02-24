@@ -1,6 +1,7 @@
 .menu-header{
     margin-top: 10px;
     border-bottom: 5px solid black;
+    position: relative;
     
 }
 
@@ -13,10 +14,19 @@
     .title-responisve{
         margin: 0 auto;
     }
+    .btn-responsive{
+        position: absolute;
+        bottom: 0;
+        padding-left: 3px;
+        padding-bottom: 3px;
+    }
 }
   
 @media (min-width: 481px) {
     .title-responisve{
+        display: none;
+    }
+    .btn-responsive{
         display: none;
     }
 }

@@ -14,6 +14,7 @@ function MenuCarousel() {
     return (
     
       <div className="carousel">
+        <p>Recette aléatoire</p>
       <Carousel 
           autoplay
           slidesToShow={1}

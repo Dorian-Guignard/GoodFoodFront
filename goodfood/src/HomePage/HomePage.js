@@ -10,7 +10,7 @@ function HomePage(){
     return(
     <div className="home-content">
 
-        <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum       
+        <Paragraph>Bienvenue sur "Good Food" ! Nous sommes là pour vous aider à manger sainement tout en vous faisant plaisir avec notre livre de recettes saines. Nous découvrirons une variété de recettes délicieuses pour vous aider à améliorer votre équilibre alimentaire, développer vos connaissances en nutrition et découvrir les bienfaits sur votre santé. Que vous cherchiez des recettes vitaminées pour commencer la journée, des plats détox pour nettoyer votre organisme, des boosters pour donner un coup de fouet à votre énergie, ou des recettes pour améliorer votre sommeil, nous avons tout ce qu'il vous faut ! Avec notre livre de recettes saines, vous n'aurez plus à sacrifier le goût pour une alimentation équilibrée. Alors rejoignez-nous !    
         </Paragraph>
            
         <HomeCarousel/>
