@@ -10,22 +10,29 @@ const{Title}=Typography
 
 function HomeVertue() {
     const [virtues, setVirtues] = useState([]);
+    /*const [loading, setLoading] = useState(false);*/
     const isSmallScreen=useMediaQuery({ maxWidth: 450 })
     const navigate = useNavigate();
     
     useEffect(() => {
+      /* setLoading(true);*/
         axios.get('http://0.0.0.0:8080/api/virtues')
           .then(response => {
             setVirtues(response.data[0].virtues);
           })
           .catch(error => {
             console.log(error);
-          });
+          })
+          /* .finally(() => {
+            setLoading(false);
+          }); */
       }, []);
         
     return (
         
       <div className='block-vertue'>
+        {/* {loading && <Loader active />} */}
+        {/* {!loading && */}
       <Row gutter={[0, 24]} justify="center">
         <Col span={24}>
           <Title level={isSmallScreen ? 3 : 1}>Les Vertus</Title>
@@ -43,6 +50,7 @@ function HomeVertue() {
           </Col>
         ))}
       </Row>
+      {/* } */}
     </div>
   );
 }
