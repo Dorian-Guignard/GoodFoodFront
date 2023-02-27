@@ -3,12 +3,11 @@ import { Carousel } from 'antd'
 import { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { RightOutlined, LeftOutlined } from "@ant-design/icons";
-import RecipeCard from '../../RecipeCard/RecipeCard';
 
 import './HomeCarousel.css';
 
 function MenuCarousel() {
-    const smallScreen=useMediaQuery({ maxWidth: 450 })
+    const isSmallScreen=useMediaQuery({ maxWidth: 450 })
   
     const ref = useRef()
 
@@ -23,7 +22,7 @@ function MenuCarousel() {
           ref={ref}
       > 
         <div>
-          <h1 className='carousel-card'style={smallScreen ? { height: "100px" } : { height: "200px" }} >Slide 1</h1>
+          <h1 className='carousel-card'style={isSmallScreen ? { height: "100px" } : { height: "200px" }} >Slide 1</h1>
         </div>
         <div>
           <h1 className='carousel-card'>Slide2</h1>
@@ -37,7 +36,7 @@ function MenuCarousel() {
       </Carousel>
       <div className='carousel-btn'>
         <Button
-          size={smallScreen ? 'small' :'middle'}
+          size={isSmallScreen ? 'small' :'middle'}
           ghost
           onClick={()=>{
               ref.current.prev()
@@ -46,7 +45,7 @@ function MenuCarousel() {
           </Button>
         
         <Button 
-          size={smallScreen ? 'small' :'middle'}
+          size={isSmallScreen ? 'small' :'middle'}
           ghost
           onClick={()=>{
               ref.current.next()

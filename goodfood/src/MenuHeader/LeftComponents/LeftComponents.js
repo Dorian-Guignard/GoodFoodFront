@@ -6,7 +6,7 @@ import './LeftComponents.css'
 const {Title} = Typography;
 
 
-function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate, location }) {
+function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate }) {
   
     return (
       <Col className="left-components" span={8} xs={4} lg={8} xl={8}>
@@ -25,7 +25,7 @@ function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate, locatio
           placement="left"
          
         >
-          <MenuBurger />
+          <MenuBurger onClose={toggleMenu}/>
           <div className="login-switch">
               <Button 
               onClick={() => {toggleMenu(); navigate('/login')}}

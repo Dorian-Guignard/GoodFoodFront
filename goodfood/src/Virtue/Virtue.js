@@ -1,16 +1,14 @@
 import { Col, Row } from 'antd';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import {useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import RecipeCard from '../RecipeCard/RecipeCard';
 
 
 
 function Virtue(){
+    const {virtuename}=useParams();
     
-    const location = useLocation();
-    const virtueSelected = location.pathname;
-    const virtueToShow = virtueSelected.split("/")[2];
     /*console.log(virtueSelected);
     console.log(virtueToShow);*/
     
@@ -47,7 +45,7 @@ function Virtue(){
     console.log(mappedRecipes);
       return (
         <div>
-            <h2>{virtueToShow}</h2>     
+            <h2>{virtuename}</h2>     
                 <RecipeCard recipe={mappedRecipes}/>
         </div>       
         );

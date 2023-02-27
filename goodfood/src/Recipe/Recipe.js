@@ -1,12 +1,10 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import {useLocation} from "react-router-dom";
+import { useParams} from "react-router-dom";
 
 function Recipe(){
 
-    const location = useLocation();
-    const recipeSelected = location.pathname;
-    const recipeToShow = recipeSelected.split("/")[2];
+    const {recipeToShow}=useParams();
 
     /*console.log(recipeToShow);*/
 

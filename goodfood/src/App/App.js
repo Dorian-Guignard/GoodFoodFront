@@ -12,12 +12,14 @@ import Contact from "../Contact/Contact";
 import AddRecipe from "../AddRecipe/AddRecipe";
 import LoginPage from "../LoginPage/LoginPage";
 import Virtue from "../Virtue/Virtue"
+import { VirtuesContextProvider } from '../Utils/providers/VirtuesProvider';
 
 
 function App() { 
   
   return (
     <div className="App">
+    <VirtuesContextProvider>
     <ConfigProvider
           theme={{
             token: {
@@ -32,7 +34,7 @@ function App() {
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/recipe/*" element={<Recipe/>}></Route>
         <Route path="/categorie" element={<CategoryList/>}></Route>
-        <Route path="/vertue/*" element={<Virtue/>}></Route>
+        <Route path="/vertue/:virtuename" element={<Virtue/>}></Route>
         <Route path="/recipe/add" element={<AddRecipe/>}></Route>
         <Route path="/mentionslegales" element={<LegalNotice/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
@@ -41,6 +43,7 @@ function App() {
     </div>
     <Footer/>
     </ConfigProvider>
+    </VirtuesContextProvider>
     </div>
   );
 }

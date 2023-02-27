@@ -1,27 +1,17 @@
-import './HomeVertue.css';
+import './HomeVirtue.css';
 import { Col, Row,Card, Typography } from 'antd';
-import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import { useVirtuesContext } from '../../Utils/providers/VirtuesProvider';
 import { useMediaQuery } from 'react-responsive';
 const {Meta}=Card;
 const{Title}=Typography
 
 
-function HomeVertue() {
-    const [virtues, setVirtues] = useState([]);
+function HomeVirtue() {
+    const {virtues} = useVirtuesContext();
     const isSmallScreen=useMediaQuery({ maxWidth: 450 })
     const navigate = useNavigate();
     
-    useEffect(() => {
-        axios.get('http://0.0.0.0:8080/api/virtues')
-          .then(response => {
-            setVirtues(response.data[0].virtues);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }, []);
         
     return (
         
@@ -30,7 +20,7 @@ function HomeVertue() {
         <Col span={24}>
           <Title level={isSmallScreen ? 3 : 1}>Les Vertus</Title>
         </Col>
-        {virtues.map(virtue => (
+        {virtues?.map(virtue => (
           <Col xs={12} lg={6} key={virtue.id} style={{ display: 'flex', justifyContent: 'center' }}>
             <Card
               style={isSmallScreen ? { width: '100px', height: '100px' } : { width: '200px', height: '250px' }}
@@ -47,4 +37,4 @@ function HomeVertue() {
   );
 }
 
-export default HomeVertue;
+export default HomeVirtue;

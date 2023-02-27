@@ -1,4 +1,4 @@
-import HomeVertue from "./HomeVertue/HomeVertue";
+import HomeVirtue from "./HomeVirtue/HomeVirtue";
 import HomeCarousel from "./HomeCarousel/HomeCarousel"
 import {Typography} from 'antd';
 import './HomePage.css'
@@ -14,7 +14,7 @@ function HomePage(){
         </Paragraph>
            
         <HomeCarousel/>
-        <HomeVertue/>
+        <HomeVirtue/>
     </div>
     )
 }  

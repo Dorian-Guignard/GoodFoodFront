@@ -96,7 +96,7 @@ function RegisterForm(){
             <Input.Password
           prefix={<LockOutlined/>}
           type="password"
-          placeholder="Confirez votre Mot de passe*"
+          placeholder="Confirmez votre Mot de passe*"
         />
         </Form.Item>
 
