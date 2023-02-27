@@ -12,10 +12,12 @@ function HomeVirtue() {
     const isSmallScreen=useMediaQuery({ maxWidth: 450 })
     const navigate = useNavigate();
     
-        
+
     return (
         
       <div className='block-vertue'>
+        {/* {loading && <Loader active />} */}
+        {/* {!loading && */}
       <Row gutter={[0, 24]} justify="center">
         <Col span={24}>
           <Title level={isSmallScreen ? 3 : 1}>Les Vertus</Title>
@@ -33,6 +35,7 @@ function HomeVirtue() {
           </Col>
         ))}
       </Row>
+      {/* } */}
     </div>
   );
 }
