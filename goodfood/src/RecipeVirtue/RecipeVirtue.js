@@ -3,6 +3,11 @@ import { useRecipesContext } from '../Utils/providers/RecipesProvider';
 import {useParams, useNavigate} from "react-router-dom";
 import RecipeCard from '../RecipeCard/RecipeCard';
 import { useMediaQuery } from 'react-responsive';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import {useParams} from "react-router-dom";
+import RecipeCard from '../RecipesCards/RecipesCards';
+import Loader from '../Loader/Loader';
 
 
 

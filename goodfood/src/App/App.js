@@ -6,19 +6,23 @@ import './App.css';
 import { Routes ,Route } from "react-router-dom";
 import HomePage from "../HomePage/HomePage";
 import Recipe from "../Recipe/Recipe"
-import CategoryList from "../CategoryList/CategoryList";
+import CategoryList from "../RecipeCategory/RecipeCategory";
 import LegalNotice from "../LegalNotice/LegalNotice";
 import Contact from "../Contact/Contact";
 import AddRecipe from "../AddRecipe/AddRecipe";
 import LoginPage from "../LoginPage/LoginPage";
-import Virtue from "../Virtue/Virtue"
+import Virtue from "../RecipeVirtue/RecipeVirtue"
 import { VirtuesContextProvider } from '../Utils/providers/VirtuesProvider';
 import { RecipesContextProvider } from "../Utils/providers/RecipesProvider";
+import { hasConnected } from "../Utils/services/AuthApi";
+import { useState } from "react";
+import Auth from "../Utils/providers/Auth";
 
 
 function App() { 
-  
+  const [isConnected, setIsConnected] = useState(hasConnected());
   return (
+    <Auth.Provider value={{isConnected, setIsConnected}}>
     <div className="App">
     <VirtuesContextProvider>
     <RecipesContextProvider>
@@ -49,6 +53,8 @@ function App() {
     </VirtuesContextProvider>
     
     </div>
+    </Auth.Provider>
+    
   );
 }
 
