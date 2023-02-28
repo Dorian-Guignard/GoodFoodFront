@@ -10,7 +10,7 @@ export const getVirtues = async () => (axios.get('http://0.0.0.0:8080/api/virtue
 
 export const getRecipes = async () => (axios.get('http://0.0.0.0:8080/api/recipes')
 .then(response => {
-  return response.data.recipes
+  return response.data.recipe
 })
 .catch(error => {
   console.log(error);
