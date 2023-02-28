@@ -12,6 +12,7 @@ function HomeVirtue() {
     const isSmallScreen=useMediaQuery({ maxWidth: 450 })
     const navigate = useNavigate();
     
+    
 
     return (
         

@@ -15,7 +15,7 @@ function RecipeCard({recipe}){
               hoverable
               onClick={() => navigate(`/recipe/${recipe.id}`)}
             >
-              <p>{recipe.category}</p>
+              <p>{recipe.heatTime}</p>
               <p>{recipe.virtue}</p>
             </Card>
             </Col>   
@@ -26,17 +26,5 @@ function RecipeCard({recipe}){
         )
 
     }
-
-RecipeCard.propTypes = {
-    recipe: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            category: PropTypes.string.isRequired,
-            virtue: PropTypes.string.isRequired,
-        })
-    ).isRequired,
-};
-
 
 export default RecipeCard;

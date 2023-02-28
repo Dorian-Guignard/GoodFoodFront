@@ -1,22 +1,23 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
-import Loader from '../Loader/Loader';
+
 
 function Recipe(){
 
-    const {recipeToShow}=useParams();
+    const {recipeId}=useParams();
 
-    console.log(recipeToShow);
+    console.log(recipeId);
+    
 
     const [recipe, setRecipe] = useState([]);
-    /*const [loading, setLoading] = useState(false);*/
+    
 
     const fetchResults = () => {
         /*setLoading(true);*/
-        axios.get(`http://0.0.0.0:8080/api/recipes/${recipeToShow}`)
+        axios.get(`http://0.0.0.0:8080/api/recipes/${recipeId}`)
             .then((response) => {
-            setRecipe(response.data);
+            setRecipe(response.data.recipe);
         })
         .catch((error) => {
             console.error(error);
@@ -30,7 +31,7 @@ function Recipe(){
             fetchResults();
             }, []);
 
-        console.log(recipe)
+            console.log(recipe)
         
 
 

@@ -13,6 +13,7 @@ import AddRecipe from "../AddRecipe/AddRecipe";
 import LoginPage from "../LoginPage/LoginPage";
 import Virtue from "../Virtue/Virtue"
 import { VirtuesContextProvider } from '../Utils/providers/VirtuesProvider';
+import { RecipesContextProvider } from "../Utils/providers/RecipesProvider";
 
 
 function App() { 
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
     <VirtuesContextProvider>
+    <RecipesContextProvider>
     <ConfigProvider
           theme={{
             token: {
@@ -43,7 +45,9 @@ function App() {
     </div>
     <Footer/>
     </ConfigProvider>
+    </RecipesContextProvider>
     </VirtuesContextProvider>
+    
     </div>
   );
 }
