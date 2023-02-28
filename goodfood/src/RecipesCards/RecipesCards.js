@@ -1,8 +1,7 @@
 import { Col, Row, Card } from 'antd';
-import PropTypes from 'prop-types'
 import { useNavigate } from "react-router-dom";
 
-function RecipeCard({recipe}){
+function RecipesCards({recipe}){
     const navigate = useNavigate();
     
     return(
@@ -16,7 +15,7 @@ function RecipeCard({recipe}){
               onClick={() => navigate(`/recipe/${recipe.id}`)}
             >
               <p>{recipe.heatTime}</p>
-              <p>{recipe.virtue}</p>
+              <p>{recipe.virtue.name}</p>
             </Card>
             </Col>   
           ))}
@@ -27,4 +26,4 @@ function RecipeCard({recipe}){
 
     }
 
-export default RecipeCard;
+export default RecipesCards;

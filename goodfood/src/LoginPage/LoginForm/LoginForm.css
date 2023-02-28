@@ -6,3 +6,7 @@
   .register-form-input {
     width: 100%;
   }
+
+.ant-btn{
+  margin-right: 10px !important;
+}

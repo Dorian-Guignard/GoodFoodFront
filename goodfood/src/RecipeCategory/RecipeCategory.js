@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
 
-function CategoryList(){
+function RecipeCategory(){
     return(
     <div className="recipeList">
         <div className="categorie-header">
-            <image>#</image>
+            
             <h2>Catégorie ou vertue</h2>
         </div>
         <div className="recipe-grid">
@@ -36,4 +36,4 @@ function CategoryList(){
     </div>
     )
 }  
-export default CategoryList;
+export default RecipeCategory;
