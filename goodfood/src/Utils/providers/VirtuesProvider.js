@@ -20,3 +20,4 @@ export const VirtuesContextProvider = ({children}) => {
 }
 
 export const useVirtuesContext = () => useContext(VirtuesContext)
+

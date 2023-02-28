@@ -2,7 +2,7 @@ import { Col, Row } from 'antd';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
-import RecipeCard from '../RecipeCard/RecipeCard';
+import RecipeCard from '../RecipesCards/RecipesCards';
 import Loader from '../Loader/Loader';
 
 

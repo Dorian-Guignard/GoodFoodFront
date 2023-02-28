@@ -1,11 +1,16 @@
-import React from "react";
 import { Form, Input, Button, Col } from "antd";
 import { MailOutlined, LockOutlined} from "@ant-design/icons";
 import './LoginForm.css'
+import { useContext } from "react";
+import Auth from "../../Utils/providers/Auth";
 
-const LoginForm = () => {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+
+function LoginForm(){
+const {isConnected, setIsConnected}= useContext(Auth);
+
+ const onFinish = (values) => {
+  console.log(values)
+  setIsConnected(true)
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -50,7 +55,7 @@ const LoginForm = () => {
           ]}
         >
           <Input.Password
-          prefix={<LockOutlined className="site-form-item-icon" />}
+          prefix={<LockOutlined/>}
           type="password"
           placeholder="Mot de passe*"
         />
