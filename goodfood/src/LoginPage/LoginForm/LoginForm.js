@@ -1,16 +1,14 @@
 import { Form, Input, Button, Col } from "antd";
 import { MailOutlined, LockOutlined} from "@ant-design/icons";
 import './LoginForm.css'
-import { useContext } from "react";
-import Auth from "../../Utils/providers/Auth";
 
 
 function LoginForm(){
-const {isConnected, setIsConnected}= useContext(Auth);
+
 
  const onFinish = (values) => {
   console.log(values)
-  setIsConnected(true)
+  
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -62,9 +60,10 @@ const {isConnected, setIsConnected}= useContext(Auth);
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" >
             Connexion
           </Button>
+          Pas encore de compte ? <a href="/register">Inscrivez-vous !</a>
         </Form.Item>
       </Form>
     </Col>

@@ -1,5 +1,4 @@
 import { Col, Row, Card } from 'antd';
-import PropTypes from 'prop-types'
 import { useNavigate } from "react-router-dom";
 
 function RecipesCards({recipe}){
@@ -16,7 +15,7 @@ function RecipesCards({recipe}){
               onClick={() => navigate(`/recipe/${recipe.id}`)}
             >
               <p>{recipe.heatTime}</p>
-              <p>{recipe.virtue}</p>
+              <p>{recipe.virtue.name}</p>
             </Card>
             </Col>   
           ))}

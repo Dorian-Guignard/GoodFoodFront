@@ -1,6 +1,5 @@
 import { Form, Input, Button, Col } from "antd";
 import { MailOutlined, UserOutlined, LockOutlined} from "@ant-design/icons";
-import './RegisterForm.css'
 
 function RegisterForm(){
 
