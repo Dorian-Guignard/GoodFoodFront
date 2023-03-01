@@ -1,16 +1,43 @@
-import { Form, Input, Button, Col } from "antd";
+import { Form, Input, Button, Col, message } from "antd";
 import { MailOutlined, LockOutlined} from "@ant-design/icons";
 import './LoginForm.css'
+import { useContext } from "react";
+import { UserContext } from "../../Utils/providers/UserContext";
+import { useNavigate } from "react-router-dom";
 
 
 function LoginForm(){
 
+  const navigate = useNavigate();
+  const { updateUser } = useContext(UserContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
 
- const onFinish = (values) => {
-  console.log(values)
+  const handleLogin = async (values) => {
+    try {
+      const response = await fetch("http://0.0.0.0:8080/api/login_check", {
+        method: "POST",
+        body: JSON.stringify({
+          username: values.email,
+          password: values.password,
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
   
+      if (!response.ok) {
+        throw new Error("Email ou mot de passe incorrect");
+      }
+  
+      const data = await response.json();
+      updateUser(data.token);
+      message.success("Connexion réussie !");
+      setIsLoggedIn(true)
+      
+    } catch (error) {
+      console.error(error);
+      message.error(error.message);
+    }
   };
-
+  
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
@@ -24,7 +51,7 @@ function LoginForm(){
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        onFinish={handleLogin}
         onFinishFailed={onFinishFailed}
       >
         <Form.Item
@@ -71,3 +98,4 @@ function LoginForm(){
 };
 
 export default LoginForm;
+

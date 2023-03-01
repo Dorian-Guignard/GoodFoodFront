@@ -1,10 +1,9 @@
 import { useRecipesContext } from '../Utils/providers/RecipesProvider';
 import {useParams} from "react-router-dom";
 import RecipesCards from '../RecipesCards/RecipesCards';
-
-
-
-
+import './RecipeVirtue.css'
+import {Typography} from 'antd';
+const {Title}=Typography;
 
 
 function Virtue(){
@@ -22,12 +21,18 @@ function Virtue(){
         <div>
             <h2>{virtuename}</h2> 
                     
+        <div className='recipe-virtue'>
+
+          <Title level={2} className='recipe-title'>{virtuename}</Title>
+              
                <RecipesCards recipe={filteredRecipes}/>
                
-        </div>       
+        </div> 
+        </div>      
         );
         
         
 }
 
 export default Virtue ;
+
