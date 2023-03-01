@@ -1,12 +1,9 @@
 import { useRecipesContext } from '../Utils/providers/RecipesProvider';
-import {useParams, useNavigate} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import RecipesCards from '../RecipesCards/RecipesCards';
-import { useMediaQuery } from 'react-responsive';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import Loader from '../Loader/Loader';
-
-
+import './RecipeVirtue.css'
+import {Typography} from 'antd';
+const {Title}=Typography;
 
 
 function Virtue(){
@@ -16,15 +13,16 @@ function Virtue(){
     console.log()
     
 
-    const filteredRecipes = recipes.filter(recipe => recipe.virtue === {virtuename})
+    const filteredRecipes = recipes.filter(recipe => recipe.virtue.name === virtuename)
 
     console.log(filteredRecipes)
 
       return (
-        <div>
-            <h2>{virtuename}</h2> 
-                    
-               <RecipesCards recipe={recipes}/>
+        <div className='recipe-virtue'>
+
+          <Title level={2} className='recipe-title'>{virtuename}</Title>
+              
+               <RecipesCards recipe={filteredRecipes}/>
                
         </div>       
         );

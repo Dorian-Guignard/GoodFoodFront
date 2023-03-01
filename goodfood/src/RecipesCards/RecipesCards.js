@@ -1,27 +1,33 @@
 import { Col, Row, Card } from 'antd';
+import Meta from 'antd/es/card/Meta';
 import { useNavigate } from "react-router-dom";
 
+import './RecipesCards.css'
+
 function RecipesCards({recipe}){
+ 
     const navigate = useNavigate();
     
+    
     return(
-      <div>
-        <Row gutter={24}>
+      <div className='recipes-cards'>
+        <Row gutter={[24]} >
         {recipe.map((recipe) => (
-            <Col lg={6} key={recipe.id}>
+            <Col lg={6} xs={12} key={recipe.id}>
             <Card
-              title={recipe.name}
               hoverable
-              onClick={() => navigate(`/recipe/${recipe.id}`)}
+              cover={<img alt={recipe.name} src={'/' + recipe.picture} className="recipe-card-image" />}
+              onClick={() => navigate(`/recipe/${recipe.id}`
+              )}
             >
-              <p>{recipe.heatTime}</p>
-              <p>{recipe.virtue.name}</p>
+              <Meta title={recipe.name} />
+              <p className='cards-time'>{recipe.heatTime} minutes</p>
             </Card>
             </Col>   
           ))}
           
         </Row>
-          </div>
+      </div>
         )
 
     }
