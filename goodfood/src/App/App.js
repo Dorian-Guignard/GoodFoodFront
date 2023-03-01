@@ -38,7 +38,7 @@ function App() {
     <div className="content">
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
-        <Route path="/recipe/*" element={<Recipe/>}></Route>
+        <Route path="/recipe/:id" element={<Recipe/>}></Route>
         <Route path="/categorie/:categoryname" element={<RecipeCategory/>}></Route>
         <Route path="/vertue/:virtuename" element={<Virtue/>}></Route>
         <Route path="/recipe/add" element={<AddRecipe/>}></Route>

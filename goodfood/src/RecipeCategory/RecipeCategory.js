@@ -1,39 +1,32 @@
-import { Col, Row } from 'antd';
+import { useRecipesContext } from '../Utils/providers/RecipesProvider';
+import {useParams} from "react-router-dom";
+import RecipesCards from '../RecipesCards/RecipesCards';
+
+
+
+
 
 function RecipeCategory(){
-    return(
-    <div className="recipeList">
-        <div className="categorie-header">
-            
-            <h2>Catégorie ou vertue</h2>
-        </div>
-        <div className="recipe-grid">
-        <Row gutter={24}>
-                <Col lg={6}>
-                    <div className='recipe'>
-                        <div className='recipe-image'>
-                            <h3 className='recipe-title'>Recette 1</h3>
-                        </div>
-                    </div>
-                </Col>
-                <Col lg={6}>
-                    <div className='recipe'>
-                        <div className='recipe-image'>
-                            <h3 className='recipe-title'>Recette 2</h3>
-                        </div>
-                    </div>
-                </Col>
-                <Col lg={6}>
-                    <div className='recipe'>
-                        <div className='recipe-image'>
-                            <h3 className='recipe-title'>Recette 3</h3>
-                        </div>
-                    </div>
-                </Col>
-            </Row>
-        </div>
+    const {categoryname}=useParams();
+    const {recipes} = useRecipesContext(); 
+    console.log(recipes)
+    console.log()
+    
 
-    </div>
-    )
-}  
-export default RecipeCategory;
+    const filteredRecipes = recipes.filter(recipe => recipe.category.name === categoryname)
+
+    console.log(filteredRecipes)
+
+      return (
+        <div>
+            <h2>{categoryname}</h2> 
+                    
+               <RecipesCards recipe={filteredRecipes}/>
+               
+        </div>       
+        );
+        
+        
+}
+
+export default RecipeCategory ;

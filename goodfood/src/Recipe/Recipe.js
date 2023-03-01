@@ -2,13 +2,14 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
 import Loader from '../Loader/Loader';
+import './Recipe.css'; 
 
 
 function Recipe(){
 
-    const {recipeId}=useParams();
+    const {id} = useParams();
 
-    console.log(recipeId);
+    console.log(id);
     
 
     const [recipe, setRecipe] = useState([{recipe: {name:""}}]);
@@ -17,7 +18,7 @@ function Recipe(){
 
     const fetchResults = () => {
         setLoading(true);
-        axios.get(`http://0.0.0.0:8080/api/recipes/2`)
+        axios.get(`http://0.0.0.0:8080/api/recipes/${id}`)
           .then((response) => {
             
             setRecipe(response.data.recipe);
@@ -37,8 +38,8 @@ function Recipe(){
     
         
         console.log(recipe)
+      
         
-
 
       if (loading) {
         return (<Loader active />)
@@ -48,26 +49,30 @@ function Recipe(){
     return(
     
     <div className="recipe">
-        {<img alt={recipe[0]?.recipe.name} src={recipe[0]?.recipe.picture} className="card-image" />}
+        {<img alt={recipe[0]?.recipe.name} src={'/'+recipe[0]?.recipe.picture} className="card-image" />}
         <h2>{recipe[0]?.recipe.name}</h2>
 
         <div className="recipe-infos">
         <span>Portion : {recipe[0]?.recipe.portion} personnes</span> <span>Préparation : {recipe[0]?.recipe.prepTime} min </span> <span> Cuisson : {recipe[0]?.recipe.heatTime} min </span>
         </div>   
-                <div className="recipe-ingredients">
-                    <ul>
-                        <li> Liste des ingrédients </li>
-                        <li> Liste des ingrédients </li>
-                        <li> Liste des ingrédients </li>
-                    </ul>
-                </div>
+                
+                    <ul className='recipe-ingredients'>                      
+                        {recipe[0]?.recipe.compositions?.map(foods => (
+                        <li key={foods.id} className="foods-list">
+                          <span>{foods.quantity}</span>
+                          <span>{foods.unity} de </span>
+                          <span>{foods.food.name}</span>
+                          </li> ))}
+                      </ul>
+                       
+                
                 <div className="recipe-instructions">
                     <ul>
                         <li> Liste des étapes</li>
                         <li> Liste des étapes</li>
                         <li> Liste des étapes</li>
                     </ul>
-                </div>
+                </div>         
     </div>             
     )
 }      

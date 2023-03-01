@@ -1,10 +1,8 @@
 import { useRecipesContext } from '../Utils/providers/RecipesProvider';
-import {useParams, useNavigate} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import RecipesCards from '../RecipesCards/RecipesCards';
-import { useMediaQuery } from 'react-responsive';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import Loader from '../Loader/Loader';
+
+
 
 
 
@@ -16,7 +14,7 @@ function Virtue(){
     console.log()
     
 
-    const filteredRecipes = recipes.filter(recipe => recipe.virtue === {virtuename})
+    const filteredRecipes = recipes.filter(recipe => recipe.virtue.name === virtuename)
 
     console.log(filteredRecipes)
 
@@ -24,7 +22,7 @@ function Virtue(){
         <div>
             <h2>{virtuename}</h2> 
                     
-               <RecipesCards recipe={recipes}/>
+               <RecipesCards recipe={filteredRecipes}/>
                
         </div>       
         );

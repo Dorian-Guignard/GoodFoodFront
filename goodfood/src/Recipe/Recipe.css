@@ -1,0 +1,38 @@
+.recipe {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin :auto;
+}
+
+.recipe-infos {
+    background-color : #faad14 ;
+    border-radius : 15px ;
+    width: 80%;
+    height: 10vh;
+    display : flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.recipe-ingredients{
+    margin-top: 5%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foods-list{
+    margin-top: 3%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    
+}
+
+.foods-list span {
+    margin-right: 2%;
+  }
