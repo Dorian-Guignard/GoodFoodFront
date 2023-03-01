@@ -19,7 +19,6 @@ function Virtue(){
 
       return (
         <div>
-            <h2>{virtuename}</h2> 
                     
         <div className='recipe-virtue'>
 
