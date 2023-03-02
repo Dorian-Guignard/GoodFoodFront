@@ -4,12 +4,13 @@
     flex-direction: column;
     align-items: center;
     margin :auto;
+    padding-top: 2%;
 }
 
 .recipe-infos {
     background-color : #faad14 ;
     border-radius : 15px ;
-    width: 80%;
+    width: 100%;
     height: 10vh;
     display : flex;
     justify-content: space-around;
@@ -17,22 +18,29 @@
 }
 
 .recipe-ingredients{
-    margin-top: 5%;
-    width: 50%;
+    list-style: none;
+    padding: 0;
+    margin-top: 4%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #7cb305;
+    border-radius : 15px ;
 }
 
 .foods-list{
-    margin-top: 3%;
-    width: 50%;
+   
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
     
 }
 
 .foods-list span {
-    margin-right: 2%;
+    margin: auto;
   }

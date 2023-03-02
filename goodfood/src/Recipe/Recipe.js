@@ -59,9 +59,9 @@ function Recipe(){
                     <ul className='recipe-ingredients'>                      
                         {recipe[0]?.recipe.compositions?.map(foods => (
                         <li key={foods.id} className="foods-list">
-                          <span>{foods.quantity}</span>
-                          <span>{foods.unity} de </span>
-                          <span>{foods.food.name}</span>
+                          
+              
+                          <span>{foods.food.name} : {foods.quantity} {foods.unity}</span>
                           </li> ))}
                       </ul>
                        
