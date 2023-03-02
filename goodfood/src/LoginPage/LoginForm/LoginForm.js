@@ -10,7 +10,7 @@ function LoginForm(){
 
   const navigate = useNavigate();
   const { updateUser } = useContext(UserContext);
-  const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+  const {  setIsLoggedIn } = useContext(UserContext);
 
   const handleLogin = async (values) => {
     try {
@@ -30,7 +30,8 @@ function LoginForm(){
       const data = await response.json();
       updateUser(data.token);
       message.success("Connexion réussie !");
-      setIsLoggedIn(true)
+      setIsLoggedIn(true);
+      navigate('/')
       
     } catch (error) {
       console.error(error);

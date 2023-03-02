@@ -1,9 +1,7 @@
-import { UserOutlined, HomeOutlined} from "@ant-design/icons";
+import { LoginOutlined, HomeOutlined, LogoutOutlined, UserOutlined} from "@ant-design/icons";
 import { Button, Col, message, Switch } from "antd";
-import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { UserContext } from "../../Utils/providers/UserContext";
-
+import UseAuth from "../../Utils/UseAuth";
 
 import './RightComponents.css'
 
@@ -12,34 +10,43 @@ function RightComponents( ) {
   
   const navigate = useNavigate();
   const location = useLocation();
-  const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+  const { isLoggedIn, logOut } = UseAuth();
 
   const handleLogOut = ()=>{
     message.success("Vous êtes déconnecté");
-    setIsLoggedIn(false);
+    logOut()
   }
 
     return (
       <Col className="right-components" span={8} xs={4} lg={8} xl={8}>
         <Switch /> 
-        {isLoggedIn ? (
-        <Button type="primary" onClick={handleLogOut}>
-          <UserOutlined /> Déconnexion
-        </Button>
-      ) : (
-        <Button type="primary" onClick={() => navigate("/login")}>
-          <UserOutlined /> Connexion
-        </Button>
-      )}
-     
-        
-        {location.pathname !== '/' && (
-        <Button
-          type="primary"
-          onClick={() => navigate('/')}
-        > <HomeOutlined/> Retour à l'accueil
-        </Button>
-      )}  
+          {isLoggedIn 
+          ? 
+          (
+            <div className="btns-user">
+              <Button type="primary" onClick={handleLogOut}>
+                <LogoutOutlined /> Déconnexion
+              </Button>
+              
+              <Button type="primary" onClick={() => navigate("/profile")}>
+                <UserOutlined /> Mon Profil
+              </Button>
+            </div>
+          ) 
+          : 
+          (
+            <Button type="primary" onClick={() => navigate("/login")}>
+              <LoginOutlined /> Connexion
+            </Button>
+          )}
+          
+          {location.pathname !== '/' && (
+            <Button
+              type="primary"
+              onClick={() => navigate('/')}
+            > <HomeOutlined/> Accueil
+            </Button>
+          )}  
       </Col>
     );
   }

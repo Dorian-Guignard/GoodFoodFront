@@ -3,7 +3,11 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
+.btns-user{
+  display: flex;
+  justify-content: space-between;
+  
+}
 @media (max-width: 481px) {
 
     .right-components {

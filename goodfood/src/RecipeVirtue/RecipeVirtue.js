@@ -18,16 +18,14 @@ function Virtue(){
     console.log(filteredRecipes)
 
       return (
-        <div>
-            <h2>{virtuename}</h2> 
-                    
+                
         <div className='recipe-virtue'>
 
-          <Title level={2} className='recipe-title'>{virtuename}</Title>
+          <Title level={2} className='virtue-title'>{virtuename}</Title>
               
                <RecipesCards recipe={filteredRecipes}/>
                
-        </div> 
+        
         </div>      
         );
         
