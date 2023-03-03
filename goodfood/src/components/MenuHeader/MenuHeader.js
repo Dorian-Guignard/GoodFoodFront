@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import {Typography, Row, Button } from 'antd'
 import { HomeOutlined } from "@ant-design/icons";
 import LeftComponents from "./LeftComponents/LeftComponents"
-import MiddleComponents from "./MiddleComponents/MiddleComponents";
+import MiddleComponents from "./SearchBar/SearchBar";
 import RightComponents from "./RightComponents/RightComponents";
 import './MenuHeader.css'
 import { useLocation, useNavigate } from "react-router-dom";

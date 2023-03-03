@@ -1,10 +1,10 @@
 import { Col, Input } from "antd";
-import './MiddleComponents.css'
-function MiddleComponents() {
+import './SearchBar.css'
+function SearchBar() {
     return (
       <Col className="middle-components" span={8} xs={20} lg={8} xl={8}>
         <Input.Search placeholder="Rechercher une recette, aliment..." />
       </Col>
     );
   }
-export default MiddleComponents;
+export default SearchBar;
