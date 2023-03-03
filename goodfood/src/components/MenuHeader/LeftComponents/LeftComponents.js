@@ -1,9 +1,9 @@
 import { CloseOutlined, MenuOutlined, UserOutlined, LoginOutlined, LogoutOutlined } from "@ant-design/icons";
 import { Button, Col, Drawer, Switch, Image, Typography, message } from "antd"
 import MenuBurger from "../MenuBurger/MenuBurger";
-import Logo from '../../Logo.png'
+import Logo from '../../../Logo.png'
 import './LeftComponents.css'
-import UseAuth from "../../Utils/UseAuth";
+import UseAuth from "../../../Utils/UseAuth";
 const {Title} = Typography;
 
 

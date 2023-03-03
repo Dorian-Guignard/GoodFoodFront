@@ -1,7 +1,7 @@
 import { LoginOutlined, HomeOutlined, LogoutOutlined, UserOutlined} from "@ant-design/icons";
 import { Button, Col, message, Switch } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
-import UseAuth from "../../Utils/UseAuth";
+import UseAuth from "../../../Utils/UseAuth";
 
 import './RightComponents.css'
 

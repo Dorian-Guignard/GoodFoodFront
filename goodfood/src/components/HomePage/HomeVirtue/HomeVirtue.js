@@ -1,7 +1,7 @@
 import './HomeVirtue.css';
 import { Col, Row,Card, Typography } from 'antd';
 import { useNavigate } from "react-router-dom";
-import { useVirtuesContext } from '../../Utils/providers/VirtuesProvider';
+import { useVirtuesContext } from '../../../Utils/providers/VirtuesProvider';
 import { useMediaQuery } from 'react-responsive';
 const {Meta}=Card;
 const{Title}=Typography

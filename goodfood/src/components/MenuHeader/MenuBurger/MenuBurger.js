@@ -2,7 +2,7 @@
 import { Menu} from 'antd'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useVirtuesContext } from '../../Utils/providers/VirtuesProvider';
+import { useVirtuesContext } from '../../../Utils/providers/VirtuesProvider';
 
 
 function MenuBurger ({onClose}){

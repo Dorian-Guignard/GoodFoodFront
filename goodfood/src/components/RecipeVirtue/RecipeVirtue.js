@@ -1,4 +1,4 @@
-import { useRecipesContext } from '../Utils/providers/RecipesProvider';
+import { useRecipesContext } from '../../Utils/providers/RecipesProvider';
 import {useParams} from "react-router-dom";
 import RecipesCards from '../RecipesCards/RecipesCards';
 import './RecipeVirtue.css'

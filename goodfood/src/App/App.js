@@ -5,18 +5,18 @@ import { RecipesContextProvider } from "../Utils/providers/RecipesProvider";
 
 import { Routes ,Route } from "react-router-dom";
 
-import MenuHeader from "../MenuHeader/MenuHeader";
-import HomePage from "../HomePage/HomePage";
-import Recipe from "../Recipe/Recipe"
-import LegalNotice from "../LegalNotice/LegalNotice";
-import Contact from "../Contact/Contact";
-import AddRecipe from "../AddRecipe/AddRecipe";
-import Profile from "../Profile/Profile"
-import Virtue from "../RecipeVirtue/RecipeVirtue"
-import RecipeCategory from "../RecipeCategory/RecipeCategory";
-import RegisterPage from "../RegisterPage/RegisterPage";
-import LoginPage from '../LoginPage/LoginPage'
-import Footer from "../Footer/Footer";
+import MenuHeader from "../components/MenuHeader/MenuHeader";
+import HomePage from "../components/HomePage/HomePage";
+import Recipe from "../components/Recipe/Recipe"
+import LegalNotice from "../components/LegalNotice/LegalNotice";
+import Contact from "../components/Contact/Contact";
+import AddRecipe from "../components/AddRecipe/AddRecipe";
+import Profile from "../components/Profile/Profile"
+import Virtue from "../components/RecipeVirtue/RecipeVirtue"
+import RecipeCategory from "../components/RecipeCategory/RecipeCategory";
+import RegisterPage from "../components/RegisterPage/RegisterPage";
+import LoginPage from '../components/LoginPage/LoginPage'
+import Footer from "../components/Footer/Footer";
 
 import RequireAuth from "../Utils/ProtectedRoutes/RequireAuth";
 import RequireGuest from "../Utils/ProtectedRoutes/RequireGuest";
