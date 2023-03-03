@@ -23,9 +23,7 @@ function Virtue(){
 
           <Title level={2} className='virtue-title'>{virtuename}</Title>
               
-               <RecipesCards recipe={filteredRecipes}/>
-               
-        
+               <RecipesCards recipe={filteredRecipes}/>     
         </div>      
         );
         

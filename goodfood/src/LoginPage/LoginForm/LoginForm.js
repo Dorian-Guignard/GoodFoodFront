@@ -89,7 +89,7 @@ function LoginForm(){
 
         <Form.Item>
           <Button type="primary" htmlType="submit" >
-            Connexion
+            Se connecter
           </Button>
           Pas encore de compte ? <a href="/register">Inscrivez-vous !</a>
         </Form.Item>

@@ -4,3 +4,15 @@
 .cards-time{
     font-size: 10px;
 }
+.ant-card-body{
+  display: flex;
+  flex-direction: column;
+  margin : 0 auto
+}
+
+@media (max-width: 481px) {
+  .recipes-cards{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

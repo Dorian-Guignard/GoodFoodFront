@@ -1,5 +1,5 @@
 import { Form, Input, Button, Col } from "antd";
-import { MailOutlined, UserOutlined, LockOutlined} from "@ant-design/icons";
+import { MailOutlined, LockOutlined} from "@ant-design/icons";
 
 function RegisterForm(){
 
@@ -19,20 +19,6 @@ function RegisterForm(){
         onFinishFailed={onFinishFailed}
         scrollToFirstError
       >
-        <Form.Item
-          name="username"  
-          rules={[
-            {
-              required: true,
-              message: "Entrez votre Pseudo",
-            },
-          ]}
-        >
-          <Input
-          prefix={<UserOutlined />}
-          placeholder="Nom d'utilisateur*"
-        />
-        </Form.Item>
 
         <Form.Item
           name="email"
