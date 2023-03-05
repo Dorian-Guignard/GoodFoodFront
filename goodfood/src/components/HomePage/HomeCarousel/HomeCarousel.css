@@ -27,14 +27,13 @@
   margin-top: 35px !important;
 }
 .carousel-btn{
-    position: absolute;
-    top: 42%;
-    width: 100%;
+  position: absolute;
+    bottom: 2%;
+    left: 25%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
-    
-    
-}
+  }
 
 @media (max-width:450px){
     .carousel {
@@ -51,5 +50,13 @@
     .ant-card-body{
       display:flex;
       align-items: center; 
-      justify-content: center;   }
+      justify-content: center;   
+    }
+    .carousel-btn{
+      
+        bottom: 6%;
+        left: 10%;
+        width: 80%;
+       
+      }
 }

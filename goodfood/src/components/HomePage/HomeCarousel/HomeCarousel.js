@@ -49,7 +49,7 @@ function MenuCarousel() {
               onClick={()=>{
                   ref.current.prev()
               }}>
-              <LeftOutlined style={{fontSize: isSmallScreen ? "20px" : "40px", color:"green"}}/>
+              <LeftOutlined style={{fontSize: isSmallScreen ? "20px" : "20px", color:"white"}}/>
               </Button>
             
             <Button 
@@ -59,7 +59,7 @@ function MenuCarousel() {
               onClick={()=>{
                   ref.current.next()
               }}>
-              <RightOutlined style={{fontSize: isSmallScreen ? "20px" : "40px", color:"green"}}/>
+              <RightOutlined style={{fontSize: isSmallScreen ? "20px" : "20px", color:"white"}}/>
               </Button>
       </div>
   </div>
