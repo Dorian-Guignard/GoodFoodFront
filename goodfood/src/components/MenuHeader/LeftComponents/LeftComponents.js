@@ -40,7 +40,7 @@ function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate }) {
             ? 
             (
               <div>
-                <Button type="primary" onClick={handleLogOut}>
+                <Button type="primary" onClick={handleLogOut} style={{marginRight:"10px"}}>
                   <LogoutOutlined /> Déconnexion
                 </Button>
                 

@@ -2,6 +2,7 @@ import { useRecipesContext } from '../../Utils/providers/RecipesProvider';
 import {useParams} from "react-router-dom";
 import RecipesCards from '../RecipesCards/RecipesCards';
 import {Typography} from 'antd';
+import './RecipeCategory.css'
 const {Title}=Typography;
 
 

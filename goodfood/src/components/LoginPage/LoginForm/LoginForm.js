@@ -88,7 +88,7 @@ function LoginForm(){
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" >
+          <Button type="primary" htmlType="submit" style={{marginRight:"10px"}}>
             Se connecter
           </Button>
           Pas encore de compte ? <a href="/register">Inscrivez-vous !</a>

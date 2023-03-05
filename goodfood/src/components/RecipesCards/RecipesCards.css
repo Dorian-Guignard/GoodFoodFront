@@ -9,10 +9,27 @@
   flex-direction: column;
   margin : 0 auto
 }
+.recipe-card-image{
+  height: 150px;
+}
 
 @media (max-width: 481px) {
   .recipes-cards{
     margin-left: 10px;
     margin-right: 10px;
+  }
+  .recipe-card-image{
+    height: 100px;
+  }
+  .ant-card-body{
+    text-align: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .ant-card-body{
+    padding: 10px !important;
+    text-align: center;
+    align-items: center;
   }
 }

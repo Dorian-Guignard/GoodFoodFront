@@ -53,7 +53,9 @@ function Recipe(){
         <h2>{recipe[0]?.recipe.name}</h2>
 
         <div className="recipe-infos">
-        <span>Portion : {recipe[0]?.recipe.portion} personnes</span> <span>Préparation : {recipe[0]?.recipe.prepTime} min </span> <span> Cuisson : {recipe[0]?.recipe.heatTime} min </span>
+        <span>Portion : {recipe[0]?.recipe.portion} personnes</span> 
+        <span>Préparation : {recipe[0]?.recipe.prepTime} min </span> 
+        <span> Cuisson : {recipe[0]?.recipe.heatTime ? recipe[0]?.recipe.heatTime + " min" : "aucune"} </span>
         </div>   
                 
                     <ul className='recipe-ingredients'>                      
@@ -61,7 +63,7 @@ function Recipe(){
                         <li key={foods.id} className="foods-list">
                           
               
-                          <span>{foods.food.name} : {foods.quantity} {foods.unity}</span>
+                          <span> {foods.quantity} {foods.unity} {foods.food.name} </span>
                           </li> ))}
                       </ul>
                        

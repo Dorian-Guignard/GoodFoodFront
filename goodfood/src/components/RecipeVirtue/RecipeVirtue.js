@@ -9,12 +9,10 @@ const {Title}=Typography;
 function Virtue(){
     const {virtuename}=useParams();
     const {recipes} = useRecipesContext(); 
-    console.log(recipes)
-    console.log()
     
-
+    console.log(virtuename)
+  
     const filteredRecipes = recipes.filter(recipe => recipe.virtue.name === virtuename)
-
     console.log(filteredRecipes)
 
       return (

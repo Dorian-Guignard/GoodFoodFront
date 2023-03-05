@@ -1,10 +1,35 @@
-import { Form, Input, Button, Col } from "antd";
-import { MailOutlined, LockOutlined} from "@ant-design/icons";
+import { Form, Input, Button, Col, message } from "antd";
+import { MailOutlined, LockOutlined, UserOutlined} from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 function RegisterForm(){
 
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+  const navigate = useNavigate()
+  const handleRegister = async (values) => {
+    try {
+      const response = await fetch("http://0.0.0.0:8080/api/users", {
+        method: "POST",
+        body: JSON.stringify({
+          email: values.email,
+          password: values.password,
+          nameUser:values.pseudo
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Email déjà utilisé");
+      }
+  
+      const data = await response.json();
+      console.log(data);
+      message.success("Compte créé, vous pouvez vous connectez !")
+      navigate('/login')
+      
+    } catch (error) {
+      console.error(error);
+      message.error(error.message);
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -15,10 +40,25 @@ function RegisterForm(){
     <Col span={12}>
       <Form
         name="register"
-        onFinish={onFinish}
+        onFinish={handleRegister}
         onFinishFailed={onFinishFailed}
         scrollToFirstError
       >
+        <Form.Item
+          
+          name="pseudo"
+          rules={[
+            {
+              required: true,
+              message: "Entrez votre pseudo",
+            },
+          ]}
+        >
+          <Input 
+            prefix={<UserOutlined />}
+            placeholder="Pseudo*" 
+          />
+        </Form.Item>
 
         <Form.Item
           name="email"
