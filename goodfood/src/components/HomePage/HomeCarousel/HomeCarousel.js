@@ -4,8 +4,9 @@ import { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 import { useRecipesContext } from '../../../Utils/providers/RecipesProvider';
-import './HomeCarousel.css';
 import { useNavigate } from 'react-router-dom';
+import './HomeCarousel.css';
+
 
 
 function MenuCarousel() {

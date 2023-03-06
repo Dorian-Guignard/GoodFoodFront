@@ -9,6 +9,7 @@ import MenuHeader from "../components/MenuHeader/MenuHeader";
 import HomePage from "../components/HomePage/HomePage";
 import Recipe from "../components/Recipe/Recipe"
 import LegalNotice from "../components/LegalNotice/LegalNotice";
+import SearchResult from "../components/MenuHeader/SearchBar/SearchResult/SearchResult";
 import Contact from "../components/Contact/Contact";
 import AddRecipe from "../components/AddRecipe/AddRecipe";
 import Profile from "../components/Profile/Profile"
@@ -49,6 +50,7 @@ function App() {
               <Route path="/vertue/:virtuename" element={<Virtue/>}/>
               <Route path="/mentionslegales" element={<LegalNotice/>}/>
               <Route path="/contact" element={<Contact/>}/>
+              <Route path="/search" component={<SearchResult/>} />
               <Route element={<RequireGuest/>}>
                 <Route exact path="/login" element={<LoginPage/>}/>
                 <Route path="/register" element={<RegisterPage/>}/>
