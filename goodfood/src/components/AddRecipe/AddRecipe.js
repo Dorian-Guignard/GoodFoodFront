@@ -51,6 +51,9 @@ function AddRecipe(){
         }
     }
 
+    console.log(infoDetails)
+    console.log(foodsDetails)
+    console.log(stepsDetails)
     return(
         <div className='recipe-add'>
         <Title level={2} className='recipe-title'>Ajouter une recette</Title>
@@ -58,7 +61,7 @@ function AddRecipe(){
             <Steps.Step disabled={isStepDisabled(0)} title='Ma recette' icon={<EditOutlined/>}/>
             <Steps.Step disabled={isStepDisabled(1)} title='Mes ingrédients'icon={<EditOutlined/>}/>
             <Steps.Step disabled={isStepDisabled(2)} title='Ma préparation'icon={<EditOutlined/>}/>
-            <Steps.Step disabled={isStepDisabled(3)} title='Fin'icon={<EditOutlined/>}/>
+            <Steps.Step disabled={isStepDisabled(3)} title='Validation'icon={<EditOutlined/>}/>
         </Steps>
         {forms[current]}
         </div>
@@ -66,9 +69,14 @@ function AddRecipe(){
 }
 
 function Finish(){
+    
+    
     return(
-        <h1>Bravo, votre recette a bien été ajoutée</h1>
-    )
+        <div>
+        <h1>Voulez vous ajouter cette recette :</h1>
+
+        </div>
+    )    
 }
 
 

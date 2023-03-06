@@ -1,50 +1,78 @@
-import './AddRecipeFoods.css'; 
-import {Form, Input, Select, Button} from 'antd';
+import './AddRecipeFoods.css';
+import React from 'react';
+import {Form, Input, Select, Button, Space} from 'antd';
+import Operation from 'antd/es/transfer/operation';
+
 
 
 function AddRecipeFoods({ onFinish, initialValues }) {
     
-    const foodtest = ['tomate','banane',]
+    const foodtest = ['tomate','banane',];
+    
 
     return (
-        <div>
+        <div className='AddFoods'>
         <Form onFinish={onFinish} initialValues={initialValues}>
-        <Form.Item 
-        label='Ingrédient' 
-        name={'food'} >
-            <Select mode='tags'
-            
-            allowClear>
-                {foodtest.map((food,index)=>{
-                    return <Select.Option key={index} value={food}>{food}</Select.Option>
+            <Form.List name={"foodList"}>
+                {(fields,{add, remove})=>(
+                    <>
+                    {fields.map((field,index) => {
+                        return (
+                            <Space key={field.key} direction="horizontal" size={24} >
+                        
+                        <Form.Item
+                        name={[field.name, "food"]} 
+                        >
+                            <Select
+                            mode='tags' 
+                            allowClear
+                            placeholder='Aliment'
+                            >
+                                {foodtest.map((food,index)=>{
+                                return <Select.Option key={index} value={food}>{food}</Select.Option>
+                            })}
+                            </Select>
+                        </Form.Item>
+                        <Form.Item
+                        name={[field.name, "quantity"]}
+                        
+                        >
+                        <Input placeholder='quantité'/>
+                        </Form.Item>
+                        <Form.Item
+                        name={[field.name, "unity"]}
+                        
+                        >
+                        <Input placeholder='unité'/>
+                        </Form.Item>
+                        
+                        </Space>
+                        );    
                 })}
-            </Select>
-        </Form.Item>
-        <Form.Item name={'unity'}>
-            <Input placeholder='unité de mesure (ex : cl, grammes, etc.)'/>
-        </Form.Item>
-        <Form.Item name={'quantity'}>
-            <Input placeholder='quantité'/>
-        </Form.Item>
+                    
+                
+                <Form.Item>
+                <Button type="dashed" block onClick={()=>{
+                add()
+                }} >
+                    Ajouter un Ingrédient
+                </Button>
+                </Form.Item>
+                <Button type='primary' htmlType='submit'>
+            Valider ma liste d'ingrédients
+            </Button>
+                </>
+                )}
+            </Form.List>
         
-        <Button type='primary' htmlType='submit'>
-            Ajouter cet Ingrédient
-        </Button>
-        <Button type='primary' htmlType='submit'>
-            Validez ma liste d'ingrédients
-        </Button>
+            
+           
+        
         </Form>
-        <div className='result-area'>
-            <ul className='recipe-ingredients'> 
-                <li className="foods-list"> Tomate : 200 grammes</li>
-                <li className="foods-list"> Banane : 4</li>
-            </ul>
 
         </div>
         
-        </div>
-        
 
-)}
+);}
 
 export default AddRecipeFoods
