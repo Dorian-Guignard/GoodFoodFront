@@ -26,8 +26,7 @@ function RecipesCards({recipe}){
               <Meta title={recipe.name} />
             </Card>
             </Col>   
-          ))}
-          
+          ))}  
         </Row>
       </div>
         )

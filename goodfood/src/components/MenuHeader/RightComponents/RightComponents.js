@@ -23,15 +23,9 @@ function RightComponents( ) {
           {isLoggedIn 
           ? 
           (
-            <div className="btns-user">
-              <Button type="primary" onClick={handleLogOut} style={{marginRight:"10px"}}>
-                <LogoutOutlined /> Déconnexion
-              </Button>
-              
-              <Button type="primary" onClick={() => navigate("/profile")}>
-                <UserOutlined /> Mon Profil
-              </Button>
-            </div>
+            <Button type="primary" onClick={handleLogOut} style={{marginRight:"10px"}}>
+              <LogoutOutlined /> Déconnexion
+            </Button>   
           ) 
           : 
           (
@@ -47,6 +41,10 @@ function RightComponents( ) {
             > <HomeOutlined/> Accueil
             </Button>
           )}  
+          
+          <Button type="primary" onClick={() => navigate("/profile")}>
+                <UserOutlined /> Mon Profil
+          </Button>
       </Col>
     );
   }
