@@ -1,12 +1,11 @@
 import { Col, Input } from "antd";
-import {  useLocation } from "react-router-dom";
 import './SearchBar.css'
 
 function SearchBar() {
 
   const handleSearch = async (value) => {
     const encodedValue = encodeURIComponent(value);
-    window.location.href = `/search?q=${encodedValue}`;  
+    window.location.href = `/search?q=${encodedValue}`; 
   };
 
     return (

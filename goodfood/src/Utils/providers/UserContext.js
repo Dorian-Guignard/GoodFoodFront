@@ -16,16 +16,16 @@ const UserContextProvider = ({ children }) => {
     }
   }, []);
 
-  const updateUser = (newUser) => {
-    setUser(newUser);
-    localStorage.setItem("user", JSON.stringify(newUser));
-  };
+    const updateUser = (newUser) => {
+      setUser(newUser);
+      localStorage.setItem("user", JSON.stringify(newUser));
+    };
 
-  const logOut = () => {
-    setUser(null);
-    setIsLoggedIn(false);
-    localStorage.removeItem("user");
-  };
+    const logOut = () => {
+      setUser(null);
+      setIsLoggedIn(false);
+      localStorage.removeItem("user");
+    };
 
   return (
     <UserContext.Provider value={{ user, updateUser,isLoggedIn,setIsLoggedIn, logOut }}>

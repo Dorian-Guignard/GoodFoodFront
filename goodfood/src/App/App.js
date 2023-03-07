@@ -50,7 +50,7 @@ function App() {
               <Route path="/vertue/:virtuename" element={<Virtue/>}/>
               <Route path="/mentionslegales" element={<LegalNotice/>}/>
               <Route path="/contact" element={<Contact/>}/>
-              <Route path="/search" component={<SearchResult/>} />
+              <Route path="/search" element={<SearchResult/>} />
               <Route element={<RequireGuest/>}>
                 <Route exact path="/login" element={<LoginPage/>}/>
                 <Route path="/register" element={<RegisterPage/>}/>
