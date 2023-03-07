@@ -1,15 +1,44 @@
 import './AddRecipeFoods.css';
-import React from 'react';
+import { useState, useEffect } from "react"
 import {Form, Input, Select, Button, Space} from 'antd';
+import {MinusCircleOutlined} from "@ant-design/icons";
+import Loader from '../../Loader/Loader';
+import axios from 'axios';
 import Operation from 'antd/es/transfer/operation';
 
 
 
 function AddRecipeFoods({ onFinish, initialValues }) {
     
-    const foodtest = ['tomate','banane',];
+
+    const [foods, setFoods] = useState([])
+    const [loading, setLoading] = useState(false);
     
 
+    const fetchResults = () => {
+        setLoading(true);
+        axios.get(`http://0.0.0.0:8080/api/foods`)
+          .then((response) => {
+            
+            setFoods(response.data[0].foods);
+          })
+          .catch((error) => {
+            console.error(error);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      };
+    
+
+      useEffect(() => {
+        fetchResults();
+      }, []);
+
+    console.log(foods);
+   
+    
+    if (foods !== null)
     return (
         <div className='AddFoods'>
         <Form onFinish={onFinish} initialValues={initialValues}>
@@ -28,8 +57,8 @@ function AddRecipeFoods({ onFinish, initialValues }) {
                             allowClear
                             placeholder='Aliment'
                             >
-                                {foodtest.map((food,index)=>{
-                                return <Select.Option key={index} value={food}>{food}</Select.Option>
+                                {foods.map((food)=>{
+                                return <Select.Option key={food.id} value={food.name}>{food.name}</Select.Option>
                             })}
                             </Select>
                         </Form.Item>
@@ -45,7 +74,11 @@ function AddRecipeFoods({ onFinish, initialValues }) {
                         >
                         <Input placeholder='unité'/>
                         </Form.Item>
-                        
+                        <MinusCircleOutlined 
+                        onClick={() => { 
+                          remove(field.name);
+                        }}
+                        />
                         </Space>
                         );    
                 })}

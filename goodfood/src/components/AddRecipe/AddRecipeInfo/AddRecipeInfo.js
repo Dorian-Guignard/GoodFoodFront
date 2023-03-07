@@ -1,9 +1,12 @@
 
-import {Form, Input, Button} from 'antd';
+import {Form, Input, Select, Button} from 'antd';
+import { useVirtuesContext } from '../../../Utils/providers/VirtuesProvider';
 
 
 function AddRecipeInfo({ onFinish, initialValues }) {
-    
+  
+    const {virtues} = useVirtuesContext();
+
     return (<Form onFinish={onFinish} initialValues={initialValues}>
         <Form.Item 
         label='Titre de la recette' 
@@ -31,12 +34,25 @@ function AddRecipeInfo({ onFinish, initialValues }) {
         <Form.Item  name={'picture'}>
             <Input placeholder='Image'/>
         </Form.Item>
-        <Form.Item name={'virtue'}>
-            <Input placeholder='Vertu' />
+        
+        <Form.Item
+            name={[virtues.name, "virtue"]} 
+            >
+            <Select
+            mode='tags' 
+            allowClear
+            placeholder='Vertue'
+            >
+                {virtues.map((virtue)=>{
+                return <Select.Option key={virtue.id} value={virtue.name}>{virtue.name}</Select.Option>
+                })}
+            </Select>
         </Form.Item>
+        
         <Form.Item  name={'category'}>
             <Input placeholder='Categorie'/>
         </Form.Item>
+        
         <Button type='primary' htmlType='submit'>
             Validez
         </Button>
