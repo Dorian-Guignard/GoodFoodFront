@@ -35,14 +35,14 @@ function AddRecipeFoods({ onFinish, initialValues }) {
         fetchResults();
       }, []);
 
-    console.log(foods);
+    
    
     
     if (foods !== null)
     return (
         <div className='AddFoods'>
         <Form onFinish={onFinish} initialValues={initialValues}>
-            <Form.List name={"foodList"}>
+            <Form.List name={"compositions"}>
                 {(fields,{add, remove})=>(
                     <>
                     {fields.map((field,index) => {
@@ -58,21 +58,19 @@ function AddRecipeFoods({ onFinish, initialValues }) {
                             placeholder='Aliment'
                             >
                                 {foods.map((food)=>{
-                                return <Select.Option key={food.id} value={food.name}>{food.name}</Select.Option>
+                                return <Select.Option key={food.id} value={food.data}>{food.name}</Select.Option>
                             })}
                             </Select>
                         </Form.Item>
                         <Form.Item
                         name={[field.name, "quantity"]}
-                        
                         >
-                        <Input placeholder='quantité'/>
+                          <Input type="number" placeholder='quantité'/>
                         </Form.Item>
                         <Form.Item
                         name={[field.name, "unity"]}
-                        
                         >
-                        <Input placeholder='unité'/>
+                          <Input placeholder='unité'/>
                         </Form.Item>
                         <MinusCircleOutlined 
                         onClick={() => { 
