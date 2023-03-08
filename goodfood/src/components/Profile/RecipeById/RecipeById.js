@@ -18,7 +18,7 @@ function RecipeList({recipes, navigate, isSmallScreen, data}) {
             <Card
                 style={isSmallScreen ? { width: '200px', height: '150px' } : { width: '200px', maxHeight: '250px' }}
                 hoverable
-                cover={<img alt={recipe.name} src={'/' + recipe.nameImage} style={isSmallScreen ? { height: '100px' } : { height: '150px' }} />}
+                cover={<img alt={recipe.name} src={`http://localhost:8080/${recipe.nameImage}`} style={isSmallScreen ? { height: '100px' } : { height: '150px' }} />}
                 onClick={() => navigate(`/recipe/${recipe.id}`)}
             >
                 <Meta title={recipe.name} />
