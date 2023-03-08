@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
 import Loader from '../Loader/Loader';
-import { Avatar, Card, Col, Row, Typography } from 'antd';
+import { Avatar, Col, Row, Typography } from 'antd';
 import './Recipe.css';
-import { useMediaQuery } from 'react-responsive';
+
 const { Text } = Typography;
  
 
@@ -15,7 +15,7 @@ function Recipe(){
 
     const [recipe, setRecipe] = useState([{recipe: {name:""}}]);
     const [loading, setLoading] = useState(false);
-    const isSmallScreen=useMediaQuery({ maxWidth: 450 })
+    
 
     const fetchResults = () => {
         setLoading(true);
@@ -54,14 +54,16 @@ function Recipe(){
         </div>   
                 
         <div className='recipe-ingredients'>  
-              <Row gutter={[24,24]} justify="center" style={{marginTop:'10px', marginBottom:'10px'}} >
+              <Row gutter={[24,24]} justify="center" 
+              style={{marginTop:'10px', marginBottom:'10px', justifyContent:'space-around', marginLeft:'15px'}}
+             >
                 {recipe[0]?.recipe.compositions?.map(foods => (
-                   <Col span={8} xs={24} lg={8} style={{marginLeft:'5px'}}>
+                   <Col span={8} xs={24} lg={8} key={foods.food.name}>
                     <div className='meta-card'>
                      <Avatar size={64} src={"/"+foods.food.picture} style={{marginRight:5}}/>
                      <Text strong>{foods.quantity} {foods.unity} {foods.food.name}</Text>
                    </div>
-                 </Col>
+                    </Col>
                   ))}
               </Row> 
         </div>

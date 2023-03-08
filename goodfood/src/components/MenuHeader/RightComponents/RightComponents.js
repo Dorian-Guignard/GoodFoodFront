@@ -41,10 +41,10 @@ function RightComponents( ) {
             > <HomeOutlined/> Accueil
             </Button>
           )}  
-          
+          {isLoggedIn &&
           <Button type="primary" onClick={() => navigate("/profile")}>
                 <UserOutlined /> Mon Profil
-          </Button>
+          </Button>}
       </Col>
     );
   }

@@ -4,7 +4,9 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import UseAuth from '../UseAuth';
 
 const RequireAuth = () => {
-  const { isLoggedIn } = UseAuth();
+  const { verifiedUser } = UseAuth();
+  const isLoggedIn =  verifiedUser()
+
   const location = useLocation()
 
   

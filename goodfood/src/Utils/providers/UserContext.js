@@ -6,7 +6,7 @@ export const UserContext = createContext();
 const UserContextProvider = ({ children }) => {
 // ici vous pouvez mettre ce que vous voulez votre user, votre token, etc...
   const [user, setUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -15,6 +15,11 @@ const UserContextProvider = ({ children }) => {
       setIsLoggedIn(true);
     }
   }, []);
+
+    const verifiedUser=()=>{
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+      return storedUser ? true : false;
+    }
 
     const updateUser = (newUser) => {
       setUser(newUser);
@@ -28,7 +33,7 @@ const UserContextProvider = ({ children }) => {
     };
 
   return (
-    <UserContext.Provider value={{ user, updateUser,isLoggedIn,setIsLoggedIn, logOut }}>
+    <UserContext.Provider value={{ user, updateUser,isLoggedIn, setIsLoggedIn, logOut, verifiedUser }}>
       {children}
     </UserContext.Provider>
   );
