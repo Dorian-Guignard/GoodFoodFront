@@ -5,6 +5,7 @@ import { useState } from 'react';
 import AddRecipeInfo from './AddRecipeInfo/AddRecipeInfo';
 import AddRecipeFoods from './AddRecipeFoods/AddRecipeFoods';
 import AddRecipeSteps from './AddRecipeSteps/AddRecipeSteps';
+import AddRecipeFinish from './AddRecipeFinish/AddRecipeFinish';
 const {Title}=Typography;
 
 function AddRecipe(){
@@ -33,7 +34,7 @@ function AddRecipe(){
         <AddRecipeInfo onFinish={onFinishInfoForm} initialValues={infoDetails}/>,
         <AddRecipeFoods onFinish={onFinishFoodsForm} initialValues={foodsDetails}/>,
         <AddRecipeSteps onFinish={onFinishStepsForm} initialValues={stepsDetails}/>,
-        <Finish />,
+        <AddRecipeFinish infoDetails={infoDetails} foodsDetails={foodsDetails} stepsDetails={stepsDetails} />,
     ]
 
     const isStepDisabled=(stepNumber)=>{
@@ -54,6 +55,8 @@ function AddRecipe(){
     console.log(infoDetails)
     console.log(foodsDetails)
     console.log(stepsDetails)
+    
+    
     return(
         <div className='recipe-add'>
         <Title level={2} className='recipe-title'>Ajouter une recette</Title>
@@ -68,16 +71,7 @@ function AddRecipe(){
     )
 }
 
-function Finish(){
-    
-    
-    return(
-        <div>
-        <h1>Voulez vous ajouter cette recette :</h1>
 
-        </div>
-    )    
-}
 
 
 export default AddRecipe
