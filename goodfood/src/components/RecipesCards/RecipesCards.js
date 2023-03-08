@@ -19,7 +19,7 @@ function RecipesCards({recipe}){
             <Card
               style={isSmallScreen ? { width: '200px', height: '150px' } : { width: '200px', maxHeight: '250px' }}
               hoverable
-              cover={<img alt={recipe.name} src={'/' + recipe.picture} className="recipe-card-image" />}
+              cover={<img alt={recipe.name} src={'/' + recipe.nameImage} className="recipe-card-image" />}
               onClick={() => navigate(`/recipe/${recipe.id}`
               )}
             >

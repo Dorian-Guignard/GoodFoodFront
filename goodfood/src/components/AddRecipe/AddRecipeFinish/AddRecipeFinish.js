@@ -74,7 +74,7 @@ function AddRecipeFinish({infoDetails, foodsDetails, stepsDetails} ){
         
         <div className="recipe">
             
-        {/*{<img alt={infoDetails} src={'/'+recipe[0]?.recipe.picture} className="card-image" />}*/}
+        {/*{<img alt={infoDetails} src={'/'+recipe[0]?.recipe.nameImage} className="card-image" />}*/}
         <h2>{infoDetails.name}</h2>
 
         <div className="recipe-infos">
