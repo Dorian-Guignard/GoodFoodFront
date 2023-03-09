@@ -33,7 +33,7 @@ function MenuCarousel() {
                     <div key={recipe.id}>
                       <Card 
                         className='carousel-card' 
-                        cover={<img src={recipe.picture} alt={recipe.name} className="card-images" />}
+                        cover={<img src={recipe.nameImage} alt={recipe.name} className="card-images" />}
                         onClick={() => navigate(`/recipe/${recipe.id}`)}
                         hoverable
                       >

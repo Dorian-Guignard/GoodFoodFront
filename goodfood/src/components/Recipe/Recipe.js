@@ -44,7 +44,7 @@ function Recipe(){
     return(
     
     <div className="recipe">
-        {<img alt={recipe[0]?.recipe.name} src={'/'+recipe[0]?.recipe.picture} className="card-image" />}
+        {<img alt={recipe[0]?.recipe.name} src={'/'+recipe[0]?.recipe.nameImage} className="card-image" />}
         <h2>{recipe[0]?.recipe.name}</h2>
 
         <div className="recipe-infos">
@@ -60,7 +60,7 @@ function Recipe(){
                 {recipe[0]?.recipe.compositions?.map(foods => (
                    <Col span={8} xs={24} lg={8} key={foods.food.name}>
                     <div className='meta-card'>
-                     <Avatar size={64} src={"/"+foods.food.picture} style={{marginRight:5}}/>
+                     <Avatar size={64} src={"/"+foods.food.nameImage} style={{marginRight:5}}/>
                      <Text strong>{foods.quantity} {foods.unity} {foods.food.name}</Text>
                    </div>
                     </Col>

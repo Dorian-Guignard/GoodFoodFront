@@ -93,7 +93,7 @@ function AddRecipeInfo({ onFinish, initialValues }) {
         
         </Form.Item>
         
-        <Form.Item  name={'picture'}>
+        <Form.Item  name={'nameImage'}>
 
             <Input placeholder='Image'/>
 

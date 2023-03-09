@@ -24,12 +24,12 @@ test de requette add recipe :
         "heatTime": 10,
         "prepTime": 5,
         "portion": 3,
-        "picture": "images\/recette\/infussionLaitue.jpg",
+        "nameImage": "images\/recette\/infussionLaitue.jpg",
 				"compositions":[{
             "food": {
               "id": 1,
               "name": "laitue",
-              "picture": "images\/food\/laitue.jpg"
+              "nameImage": "images\/food\/laitue.jpg"
             },
             "unity": null,
             "quantity": "1"

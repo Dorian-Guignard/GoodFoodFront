@@ -29,7 +29,7 @@ function HomeVirtue() {
               style={isSmallScreen ? { width: '100px', height: '100px' } : { width: '200px', height: '250px' }}
               onClick={() => navigate(`/vertue/${virtue.name}`)}
               hoverable
-              cover={<img alt={virtue.name} src={virtue.picture} className="card-image" />}
+              cover={<img alt={virtue.name} src={virtue.nameImage} className="card-image" />}
             >
               <Meta title={virtue.name} />
             </Card>
