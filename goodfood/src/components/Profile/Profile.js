@@ -21,8 +21,8 @@ function Profile(){
     const [data, setData] = useState(null)
     const { user } = useContext(UserContext);
     const {recipes} = useRecipesContext(); 
-    const filteredRecipesById = data?.user ? recipes.filter(recipe => recipe.user.id === data.user.id ) : [];
-    console.log(filteredRecipesById)
+    
+    
     
 
     useEffect(() => {
