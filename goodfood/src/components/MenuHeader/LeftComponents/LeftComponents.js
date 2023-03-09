@@ -58,7 +58,12 @@ function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate }) {
               <Switch />
           </div>
         </Drawer>
-        <Image style={isSmallScreen ? { width: "30px" } : { width: "60px" }} src={Logo} />
+          <a href="/">
+            <Image 
+            preview={false} 
+            style={isSmallScreen ? { width: "30px" } : { width: "60px" }} 
+            src={Logo} />
+          </a>
         <Title level={isSmallScreen ? 5 : 1} className="title">
           <span className="Good">Good</span>
           <span className="Food">Food</span>
