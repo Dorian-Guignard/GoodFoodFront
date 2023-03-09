@@ -45,6 +45,7 @@ function Profile(){
         fetchUserData();
     }, [user]);;
 
+    console.log(data)
     if (isLoading) {
         return <Loader />;
       }

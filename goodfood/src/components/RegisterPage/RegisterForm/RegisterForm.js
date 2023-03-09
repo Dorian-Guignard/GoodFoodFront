@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function RegisterForm(){
 
   const navigate = useNavigate()
+
   const handleRegister = async (values) => {
     try {
       const response = await fetch("http://0.0.0.0:8080/api/users", {
@@ -21,8 +22,7 @@ function RegisterForm(){
         throw new Error("Email déjà utilisé");
       }
   
-      const data = await response.json();
-      console.log(data);
+      const data = await response.json()
       message.success("Compte créé, vous pouvez vous connectez !")
       navigate('/login')
       
@@ -31,7 +31,7 @@ function RegisterForm(){
       message.error(error.message);
     }
   };
-
+  
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
