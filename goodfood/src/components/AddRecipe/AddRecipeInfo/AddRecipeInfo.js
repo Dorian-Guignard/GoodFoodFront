@@ -1,5 +1,5 @@
 
-import {Form, Input, Select, Button } from 'antd';
+import {Form, Input, Select, Button, Upload } from 'antd';
 import { useVirtuesContext } from '../../../Utils/providers/VirtuesProvider';
 
 
@@ -93,12 +93,6 @@ function AddRecipeInfo({ onFinish, initialValues }) {
         
         </Form.Item>
         
-        <Form.Item  name={'nameImage'}>
-
-            <Input placeholder='Image'/>
-
-        </Form.Item>
-        
         <Form.Item
             name="category"
             rules={[
@@ -140,6 +134,14 @@ function AddRecipeInfo({ onFinish, initialValues }) {
             </Select>
         
         </Form.Item>
+
+        <Upload  
+        name={'nameImage'}
+        action={"http://localhost:8080/"}>
+
+            <Input placeholder='Image'/>
+
+        </Upload>
         
         <Button type='primary' htmlType='submit'>
             Validez

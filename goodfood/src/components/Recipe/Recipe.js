@@ -60,11 +60,7 @@ function Recipe(){
                 {recipe[0]?.recipe.compositions?.map(foods => (
                    <Col span={8} xs={24} lg={8} key={foods.food.id}>
                     <div className='meta-card'>
-<<<<<<< HEAD
-                     <Avatar size={64} src={"/"+foods.food.nameImage} style={{marginRight:5}}/>
-=======
                      <Avatar size={64} src={`http://localhost:8080/${foods.food.nameImage}`} style={{marginRight:5}}/>
->>>>>>> a2d26b8528ba58dd0113b4a9654c9001663fc3e0
                      <Text strong>{foods.quantity} {foods.unity} {foods.food.name}</Text>
                    </div>
                     </Col>
