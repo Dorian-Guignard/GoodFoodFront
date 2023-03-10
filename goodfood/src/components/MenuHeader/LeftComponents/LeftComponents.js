@@ -55,8 +55,7 @@ function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate }) {
               <Button type="primary" onClick={() => {toggleMenu(); navigate('/login')}}>
                 <LoginOutlined /> Connexion
               </Button>
-              )}
-              <Switch />
+              )}      
           </div>
         </Drawer>
           <a href="/">
