@@ -1,12 +1,25 @@
-import { Button, Card, Col, Row, Typography } from "antd";
-import { MehOutlined } from "@ant-design/icons";
+import { Button, Card, Col, Row, Typography, Tooltip } from "antd";
+import { MehOutlined, StopOutlined } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
+import axios from "axios";
 import './RecipeById.css'
 
 
 function RecipeList({recipes, navigate, isSmallScreen, data}) {
   
     const filteredRecipesById = recipes.filter(recipe => recipe.user?.id === data.user.id);
+    
+    const handleDelete = (itemId) => {
+      axios.delete(`http://localhost:8080/api/recipes/${itemId}`)
+        .then(() => {
+          
+          window.location.reload();
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    };
+    
   
     return (
       <div className='recipes-by-id'>
@@ -23,7 +36,11 @@ function RecipeList({recipes, navigate, isSmallScreen, data}) {
             >
                 <Meta title={recipe.name} />
             </Card>
-            <Button>delete</Button>
+            <Tooltip title="Supprimer la recette">
+              <Button itemId={recipe.id} onClick={() => handleDelete(recipe.id)}>
+                <StopOutlined />
+                </Button>
+            </Tooltip>
             </Col>
         ))}
         </Row>
