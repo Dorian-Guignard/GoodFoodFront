@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../Utils/providers/UserContext";
 import UseAuth from "../../../Utils/UseAuth";
-import Loader from "../../Loader/Loader";
+
 
 import './RightComponents.css'
 
