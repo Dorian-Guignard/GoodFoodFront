@@ -50,6 +50,7 @@ function ProfilePicture(){
   
       message.success("L'image a bien été modifiée !")
       navigate('/profile')
+      window.location.reload();
       
     } catch (error) {
       message.error(error.message);

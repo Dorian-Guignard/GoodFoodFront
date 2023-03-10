@@ -1,12 +1,12 @@
 import { Button, Card, Col, Row, Typography, Tooltip } from "antd";
-import { MehOutlined, StopOutlined } from "@ant-design/icons";
+import { MehOutlined, CloseOutlined } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
 import axios from "axios";
 import './RecipeById.css'
 
 
 function RecipeList({recipes, navigate, isSmallScreen, data}) {
-  
+
     const filteredRecipesById = recipes.filter(recipe => recipe.user?.id === data.user.id);
     
     const handleDelete = (itemId) => {
@@ -29,7 +29,7 @@ function RecipeList({recipes, navigate, isSmallScreen, data}) {
         {filteredRecipesById.map((recipe) => (
             <Col lg={6} xs={12} key={recipe.id} style={{ display: 'flex', justifyContent: 'center' }}>
             <Card
-                style={isSmallScreen ? { width: '200px', height: '150px' } : { minWidth: '200px', maxHeight: '250px', maxWidth:'200px' }}
+                style={isSmallScreen ? { minWidth: '150px', height: '150px', maxWidth:'150px' } : { minWidth: '200px', maxHeight: '250px', maxWidth:'200px' }}
                 hoverable
                 cover={<img alt={recipe.name} src={`http://localhost:8080/${recipe.nameImage}`} style={isSmallScreen ? { height: '100px' } : { height: '150px' }} />}
                 onClick={() => navigate(`/recipe/${recipe.id}`)}
@@ -37,9 +37,15 @@ function RecipeList({recipes, navigate, isSmallScreen, data}) {
                 <Meta title={recipe.name} />
             </Card>
             <Tooltip title="Supprimer la recette">
-              <Button itemId={recipe.id} onClick={() => handleDelete(recipe.id)}>
-                <StopOutlined />
-                </Button>
+              <Button danger 
+              itemId={recipe.id} 
+              onClick={() => handleDelete(recipe.id)} 
+              type="primary" 
+              size="small"
+              style={isSmallScreen ? { position:'absolute', top:'0', left:'125px', borderRadius:'10px' } : { position:'absolute', bottom:'0', right: '95px' }}
+              >
+                <CloseOutlined />
+              </Button>
             </Tooltip>
             </Col>
         ))}

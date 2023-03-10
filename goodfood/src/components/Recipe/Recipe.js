@@ -46,7 +46,7 @@ function Recipe(){
     return(
     
     <div className="recipe">
-        {<img alt={recipe[0]?.recipe.name} src={`http://localhost:8080/${recipe[0]?.recipe.nameImage}`} className="card-image" />}
+        {<img alt={recipe[0]?.recipe.name} src={`http://localhost:8080/${recipe[0]?.recipe.nameImage}`} className="card-recipe-image" />}
         <h2>{recipe[0]?.recipe.name}</h2>
 
         <div className="recipe-infos">
@@ -74,7 +74,7 @@ function Recipe(){
                     <ul>
                     {recipe[0]?.recipe.steps?.map(step => (
                         <li key={step.id} className="steps-list">
-                          {step.content}
+                        Etape {step.name} : {step.content}
                         </li> ))}
                     </ul>
                 </div>         

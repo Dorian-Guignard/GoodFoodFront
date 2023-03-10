@@ -12,7 +12,7 @@ function SearchBar() {
       <Col className="middle-components" span={8} xs={20} lg={8} xl={8}>
         <Input.Search 
         onSearch={handleSearch}
-        placeholder="Rechercher une recette, aliment..." 
+        placeholder="Rechercher un aliment" 
         />
       </Col>
     );

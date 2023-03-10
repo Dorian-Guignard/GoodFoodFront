@@ -45,6 +45,12 @@
     padding-top: 2%;
     padding-bottom: 2%;
 }
+
+.card-recipe-image{
+    max-width:200px ;
+    min-width: 200px;
+    border-radius: 10px;
+}
 @media (max-width: 481px) {
    
   }
