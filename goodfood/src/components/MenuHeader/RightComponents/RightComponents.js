@@ -1,5 +1,5 @@
 import { LoginOutlined, HomeOutlined, LogoutOutlined, UserOutlined} from "@ant-design/icons";
-import { Button, Col, message, Switch } from "antd";
+import { Button, Col, message } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../../Utils/UseAuth";
 
@@ -19,7 +19,7 @@ function RightComponents( ) {
 
     return (
       <Col className="right-components" span={8} xs={4} lg={8} xl={8}>
-        <Switch /> 
+       
           {isLoggedIn 
           ? 
           (

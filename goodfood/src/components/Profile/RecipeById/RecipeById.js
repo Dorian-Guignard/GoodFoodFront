@@ -16,13 +16,14 @@ function RecipeList({recipes, navigate, isSmallScreen, data}) {
         {filteredRecipesById.map((recipe) => (
             <Col lg={6} xs={12} key={recipe.id} style={{ display: 'flex', justifyContent: 'center' }}>
             <Card
-                style={isSmallScreen ? { width: '200px', height: '150px' } : { width: '200px', maxHeight: '250px' }}
+                style={isSmallScreen ? { width: '200px', height: '150px' } : { minWidth: '200px', maxHeight: '250px', maxWidth:'200px' }}
                 hoverable
                 cover={<img alt={recipe.name} src={`http://localhost:8080/${recipe.nameImage}`} style={isSmallScreen ? { height: '100px' } : { height: '150px' }} />}
                 onClick={() => navigate(`/recipe/${recipe.id}`)}
             >
                 <Meta title={recipe.name} />
             </Card>
+            <Button>delete</Button>
             </Col>
         ))}
         </Row>
