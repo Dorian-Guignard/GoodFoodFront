@@ -6,8 +6,6 @@ Git clone le repo front : https://github.com/O-clock-Lucy/projet-12-recettes-hea
 
 Se déplacer dans le dossier goodfood : cd goodfood
 
-Se déplacer sur la branch dev avec le terminal : git checkout dev
-
 mettre à jour node dans le terminal : sudo n 16.17
 
 installer les dépendances du projet avec le terminal : yarn
