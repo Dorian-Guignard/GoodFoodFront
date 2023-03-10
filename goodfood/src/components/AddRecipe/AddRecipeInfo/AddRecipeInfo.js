@@ -135,13 +135,7 @@ function AddRecipeInfo({ onFinish, initialValues }) {
         
         </Form.Item>
 
-        <Upload  
-        name={'nameImage'}
-        action={"http://localhost:8080/"}>
-
-            <Input placeholder='Image'/>
-
-        </Upload>
+        
         
         <Button type='primary' htmlType='submit'>
             Validez
