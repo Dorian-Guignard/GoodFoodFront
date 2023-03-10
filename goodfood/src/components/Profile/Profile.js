@@ -40,7 +40,7 @@ function Profile(){
             }
         }
         fetchUserData();
-    }, [user]);;
+    }, [user]);
 
     console.log(data)
     if (isLoading) {
