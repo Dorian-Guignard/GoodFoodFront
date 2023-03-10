@@ -1,0 +1,39 @@
+.ant-card-meta-title {
+    white-space: pre-line !important;
+  }
+.cards-time{
+    font-size: 10px;
+}
+.ant-card-body{
+  display: flex;
+  flex-direction: column;
+  margin : 0 auto
+}
+.recipe-card-image{
+  height: 150px;
+}
+.recipes-cards{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (max-width: 481px) {
+  .recipes-cards{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .recipe-card-image{
+    height: 100px;
+  }
+  .ant-card-body{
+    text-align: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .ant-card-body{
+    padding: 10px !important;
+    text-align: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,34 @@
+.menu-header{
+    margin-top: 10px;
+    border-bottom: 5px solid black;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+@media (max-width: 481px) {
+
+    .menu-header{
+        margin-top: 5px;
+    }
+     
+    .title-responisve{
+        margin: 0 auto;
+    }
+    .btn-responsive{
+        position: absolute;
+        bottom: 0;
+        padding-left: 3px;
+        padding-bottom: 3px;
+    }
+}
+  
+@media (min-width: 481px) {
+    .title-responisve{
+        display: none;
+    }
+    .btn-responsive{
+        display: none;
+    }
+}
+

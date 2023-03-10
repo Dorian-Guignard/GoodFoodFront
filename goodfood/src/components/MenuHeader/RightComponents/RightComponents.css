@@ -1,0 +1,15 @@
+.right-components{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.profile-image{
+  border: 2px solid #d48806;
+  border-radius: 50%;
+}
+@media (max-width: 481px) {
+
+    .right-components {
+      display: none;
+    }
+}

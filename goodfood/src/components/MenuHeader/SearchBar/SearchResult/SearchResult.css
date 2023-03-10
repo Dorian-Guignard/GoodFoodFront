@@ -1,0 +1,39 @@
+.ant-card-meta-title {
+    white-space: pre-line !important;
+  }
+
+.cards-time{
+    font-size: 10px;
+}
+.ant-card-body{
+  display: flex;
+  flex-direction: column;
+  margin : 0 auto
+}
+.result-card-image{
+  height: 150px;
+}
+.search-cards{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 481px) {
+  .search-cards{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .result-card-image{
+    height: 100px;
+  }
+  .ant-card-body{
+    text-align: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .ant-card-body{
+    padding: 10px !important;
+    text-align: center;
+    align-items: center;
+  }
+}

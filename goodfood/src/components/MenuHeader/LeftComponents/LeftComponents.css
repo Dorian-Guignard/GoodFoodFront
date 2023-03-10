@@ -1,0 +1,37 @@
+.left-components{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Good{
+    color:#458651;
+}
+
+.Food{
+    color:#7cb305;
+}
+
+.login-switch{
+    display:flex;
+    justify-content: space-around;
+
+}
+
+@media (max-width: 481px) {
+   
+    .left-components{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .title{
+        display: none;
+    }
+}
+
+@media (min-width: 481px) {
+    .login-switch {
+      display: none;
+    }
+}

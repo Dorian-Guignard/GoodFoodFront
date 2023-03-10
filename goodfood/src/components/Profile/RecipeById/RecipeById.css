@@ -1,0 +1,6 @@
+@media (max-width: 481px) {
+    .recipes-by-id{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+}

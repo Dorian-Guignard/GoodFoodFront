@@ -1,0 +1,28 @@
+.block-vertue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+.card-image{
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 481px) {
+    .card-image{
+        height: 70px;
+        object-fit: cover;
+    }
+    .ant-card-meta-title{
+        font-size: 8px !important;  
+    }
+    .ant-card-body{
+        padding-top: 13px !important;
+    }
+   
+    
+}

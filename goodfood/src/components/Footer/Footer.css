@@ -1,0 +1,18 @@
+.footer {
+    margin-top: 30px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 5%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border : 1px solid black
+    
+}
+
+.footer-element {
+    margin-right: 50px;
+
+    
+}
