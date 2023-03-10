@@ -43,7 +43,7 @@ function RecipeList({recipes, navigate, isSmallScreen, data}) {
               onClick={() => handleDelete(recipe.id)} 
               type="primary" 
               size="small"
-              style={isSmallScreen ? { position:'absolute', top:'0', left:'125px', borderRadius:'10px' } : { position:'absolute', bottom:'0', right: '95px' }}
+              style={isSmallScreen ? { position:'absolute', top:'0', right:'5px', borderRadius:'10px' } : { position:'relative', bottom:'0', right: '30px' }}
               >
                 <CloseOutlined />
               </Button>
