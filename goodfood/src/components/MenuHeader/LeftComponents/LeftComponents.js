@@ -15,7 +15,8 @@ function LeftComponents({ toggleMenu, menuOpen, isSmallScreen, navigate }) {
     toggleMenu(); 
     navigate('/')
     message.success("Vous êtes déconnecté");
-    logOut()
+    logOut();
+    window.location.reload();
   }
     return (
       <Col className="left-components" span={8} xs={4} lg={8} xl={8}>

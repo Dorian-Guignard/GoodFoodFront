@@ -6,6 +6,7 @@ import './RecipeById.css'
 
 
 function RecipeList({recipes, navigate, isSmallScreen, data}) {
+  
 
     const filteredRecipesById = recipes.filter(recipe => recipe.user?.id === data.user.id);
     

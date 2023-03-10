@@ -46,7 +46,8 @@ function RightComponents( ) {
 
   const handleLogOut = ()=>{
     message.success("Vous êtes déconnecté");
-    logOut()
+    logOut();
+    window.location.reload();
   }
 
  
