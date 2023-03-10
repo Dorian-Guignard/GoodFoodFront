@@ -1,11 +1,13 @@
-import { Button, message } from "antd"
+import { Button, message, Upload } from "antd"
+import {UploadOutlined} from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../../Utils/providers/UserContext";
 import './AddRecipeFinish.css'; 
 
 function AddRecipeFinish({infoDetails, foodsDetails, stepsDetails} ){
 
+    const [imageFile, setImageFile] = useState({});
     const navigate = useNavigate();
     const { user } = useContext(UserContext);
     
@@ -37,12 +39,7 @@ function AddRecipeFinish({infoDetails, foodsDetails, stepsDetails} ){
       "steps": stepsToSubmit.steps
       
     }
-
     
-   console.log(infosToSubmit)
-    console.log(foodsToSubmit)
-    console.log(stepsToSubmit)
-
     const handleAddRecipe = async (values) => {
       try {
         const response = await fetch("http://0.0.0.0:8080/api/recipes", {
@@ -58,7 +55,25 @@ function AddRecipeFinish({infoDetails, foodsDetails, stepsDetails} ){
           throw new Error("Echec de l'ajout de la recette");
         }
     
-        message.success("Connexion réussie !");
+        // deuxième requete pour image ici
+        const recipe = await response.json();
+
+        const formData = new FormData();
+        formData.append("imageFile", imageFile);
+
+        const imageResponse = await fetch(`http://0.0.0.0:8080/api/recipes/${recipe.recipe.id}/add-image`, {
+          method: "POST",
+          body: formData,
+          headers: {
+          Authorization: `Bearer ${user}`,
+          },
+        });
+
+        if (!imageResponse.ok) {
+          throw new Error("Echec de l'ajout de l'image");
+        }
+        
+        message.success("Ajout de recette réussie !");
         navigate("/");
       } catch (error) {
         console.error(error);
@@ -72,9 +87,22 @@ function AddRecipeFinish({infoDetails, foodsDetails, stepsDetails} ){
     
     return(
         
-        <div className="recipe">
-            
-        {/*{<img alt={infoDetails} src={'/'+recipe[0]?.recipe.nameImage} className="card-image" />}*/}
+        <div className="recipe">    
+          <Upload
+          name="imageFile"
+            multiple={false}
+            maxCount={1}
+            accept="image/*"
+            beforeUpload={(file) => {
+              console.log("in beforeUplaod",file);
+              setImageFile(file)
+              console.log(imageFile)
+              return false;
+            }}
+           >
+            <Button icon={<UploadOutlined />}>Sélectionner une image</Button>
+          </Upload>
+
         <h2>{infoDetails.name}</h2>
 
         <div className="recipe-infos">
@@ -96,9 +124,13 @@ function AddRecipeFinish({infoDetails, foodsDetails, stepsDetails} ){
                     <span> {step.steps} </span>
                 </li> ))}
         </ul>
+
+        
+        
+        
         <Button type='primary' size="large" onClick={handleAddRecipe}>
             Valider ma recette
-            </Button>
+        </Button>
                     
         </div>    
            
