@@ -24,6 +24,7 @@ import RequireAuth from "../Utils/ProtectedRoutes/RequireAuth";
 import RequireGuest from "../Utils/ProtectedRoutes/RequireGuest";
 
 import './App.css';
+import ProfilePicture from "../components/ProfilePicture/ProfilePicture";
 
 
 function App() { 
@@ -59,6 +60,7 @@ function App() {
               <Route element={<RequireAuth/>}>
                 <Route exact path='/profile' element={<Profile/>} />
                 <Route path="/recipe/add" element={<AddRecipe/>}/>
+                <Route path="/change-profile-picture" element={<ProfilePicture/>}/>
               </Route>
             </Routes>
         </div>

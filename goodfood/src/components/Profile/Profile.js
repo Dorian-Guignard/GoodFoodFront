@@ -22,9 +22,6 @@ function Profile(){
     const { user } = useContext(UserContext);
     const {recipes} = useRecipesContext(); 
     
-    
-    
-
     useEffect(() => {
         async function fetchUserData() {
             if (user) {

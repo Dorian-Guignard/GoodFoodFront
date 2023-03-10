@@ -1,8 +1,10 @@
 import { Avatar, Button, Typography } from "antd";
 import { EditOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 function UserInformation({data}) {
+  const navigate = useNavigate();
     return (
       <>
         <Typography.Title level={1}>Bienvenue : {data ? data.user.nameUser : ''} </Typography.Title>
@@ -11,6 +13,7 @@ function UserInformation({data}) {
           shape="circle" 
           icon={<EditOutlined />} 
           style={{position:'absolute', marginTop:'30px'}}
+          onClick={() => navigate('/change-profile-picture')}
         />
       </>
     );

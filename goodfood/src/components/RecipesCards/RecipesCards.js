@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import './RecipesCards.css'
 
+
 function RecipesCards({recipe}){
     
   const isSmallScreen=useMediaQuery({ maxWidth: 450 })
@@ -20,8 +21,7 @@ function RecipesCards({recipe}){
               style={isSmallScreen ? { width: '200px', height: '150px' } : { width: '200px', maxHeight: '250px' }}
               hoverable
               cover={<img alt={recipe.name} src={`http://localhost:8080/${recipe.nameImage}`} className="recipe-card-image" />}
-              onClick={() => navigate(`/recipe/${recipe.id}`
-              )}
+              onClick={() => navigate(`/recipe/${recipe.id}`)}
             >
               <Meta title={recipe.name} />
             </Card>

@@ -1,28 +1,35 @@
-import { Form, Input, Button, Col, message } from "antd";
-import { MailOutlined, LockOutlined, UserOutlined} from "@ant-design/icons";
+import { Form, Input, Button, Col, message, Upload, Avatar } from "antd";
+import { MailOutlined, LockOutlined, UserOutlined, PlusOutlined} from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 function RegisterForm(){
 
   const navigate = useNavigate()
+  const [imagePreview, setImagePreview] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
 
   const handleRegister = async (values) => {
     try {
-      const response = await fetch("http://0.0.0.0:8080/api/users", {
-        method: "POST",
-        body: JSON.stringify({
-          email: values.email,
-          password: values.password,
-          nameUser:values.pseudo
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
+      console.log("Formulaire soumis avec les données suivantes : ", values);
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
+      const formData = new FormData();
+      formData.append("email", values.email);
+      formData.append("password", values.password);
+      formData.append("nameUser", values.pseudo);
+      formData.append("imageFile", imageFile);    
   
-      if (!response.ok) {
+      const response = await axios.post("http://0.0.0.0:8080/api/users", formData, config);
+  
+      if (response.status !== 201) {
         throw new Error("Email déjà utilisé");
       }
   
-      const data = await response.json()
       message.success("Compte créé, vous pouvez vous connectez !")
       navigate('/login')
       
@@ -36,6 +43,24 @@ function RegisterForm(){
     console.log("Failed:", errorInfo);
   };
 
+  const beforeUploadHandler = (file) => {
+    const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+    const maxFileSize = 5 * 1024 * 1024; // 5 MB
+  
+    if (!allowedTypes.includes(file.type)) {
+      message.error(`Le type de fichier ${file.type} n'est pas supporté`);
+      return false;
+    }
+  
+    if (file.size > maxFileSize) {
+      message.error(`La taille de fichier doit être inférieure à 5MB`);
+      return false;
+    }
+    setImageFile(file);
+    setImagePreview(URL.createObjectURL(file));
+    return false;
+  }
+
   return (
     <Col span={12}>
       <Form
@@ -43,7 +68,27 @@ function RegisterForm(){
         onFinish={handleRegister}
         onFinishFailed={onFinishFailed}
         scrollToFirstError
-      >
+      > 
+        <Form.Item 
+        style={{display:"flex", fontWeight:'bold'}}
+        label='Photo de Profil'
+        name="image">
+          <Upload
+            accept=".png, .jpeg, .jpg"
+            listType="picture-card"
+            showUploadList={false}
+            beforeUpload={beforeUploadHandler}
+          >
+            {imagePreview ? (
+              <Avatar src={imagePreview} size={64} />
+            ) : (
+              <div>
+                <PlusOutlined />
+                <div style={{ marginTop: 8 }}>Upload</div>
+              </div>
+            )}
+          </Upload>
+        </Form.Item>
         <Form.Item
           
           name="pseudo"
