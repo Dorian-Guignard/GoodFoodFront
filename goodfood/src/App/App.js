@@ -3,7 +3,7 @@ import UserContextProvider  from "../Utils/providers/UserContext";
 import { VirtuesContextProvider } from '../Utils/providers/VirtuesProvider';
 import { RecipesContextProvider } from "../Utils/providers/RecipesProvider";
 
-import { Routes ,Route } from "react-router-dom";
+import { Routes ,Route, Switch } from "react-router-dom";
 
 import MenuHeader from "../components/MenuHeader/MenuHeader";
 import HomePage from "../components/HomePage/HomePage";
@@ -18,6 +18,7 @@ import RecipeCategory from "../components/RecipeCategory/RecipeCategory";
 import RegisterPage from "../components/RegisterPage/RegisterPage";
 import LoginPage from '../components/LoginPage/LoginPage'
 import Footer from "../components/Footer/Footer";
+import Page404 from './Page404';
 
 
 import RequireAuth from "../Utils/ProtectedRoutes/RequireAuth";
@@ -62,6 +63,7 @@ function App() {
                 <Route path="/recipe/add" element={<AddRecipe/>}/>
                 <Route path="/change-profile-picture" element={<ProfilePicture/>}/>
               </Route>
+              <Route path="*" element={<Page404 />} />
             </Routes>
         </div>
       <Footer/>
